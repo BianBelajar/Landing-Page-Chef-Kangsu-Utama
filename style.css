@@ -2039,6 +2039,14 @@ button {
     line-height: 1.1;
   }
 
+  .stat-item-belajar {
+    justify-content: center;
+  }
+
+  .stat-item-belajar .stat-info {
+    text-align: center;
+  }
+
   .stat-divider {
     width: 1px;
     height: 24px;
