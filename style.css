@@ -295,6 +295,8 @@ button {
   height: 52px;
   width: auto;
   border-radius: 12px;
+  display: block;
+  overflow: visible;
 }
 
 .logo-link {
@@ -602,6 +604,12 @@ button {
   font-weight: 600;
 }
 
+.stat-label-exp {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
 .stat-number-stacked,
 .stat-label-bold {
   font-weight: 800;
@@ -766,6 +774,14 @@ button {
   justify-content: center;
   padding: 0 4px;
   flex-shrink: 0;
+}
+
+.arrow-desktop {
+  display: block;
+}
+
+.arrow-mobile {
+  display: none;
 }
 
 /* Quiz Banner - 100% Identik dengan media_1787734048246.png */
@@ -1793,7 +1809,10 @@ button {
   }
 
   .logo-img {
-    height: 38px;
+    height: 44px;
+    width: auto;
+    border-radius: 10px;
+    object-fit: contain;
   }
 
   .logo-name {
@@ -2068,15 +2087,25 @@ button {
     font-size: 0.82rem;
   }
 
+  .stat-label-exp {
+    font-size: 0.58rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    line-height: 1.1;
+    white-space: nowrap;
+  }
+
   .level-flow {
     flex-direction: column;
-    gap: 10px;
+    gap: 0;
     margin-bottom: 30px;
+    align-items: center;
   }
 
   .level-card {
     padding: 18px 16px;
     border-radius: 16px;
+    width: 100%;
   }
 
   .level-badge {
@@ -2095,8 +2124,20 @@ button {
   }
 
   .level-arrow {
-    transform: rotate(90deg);
-    padding: 2px 0;
+    transform: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+  }
+
+  .arrow-desktop {
+    display: none;
+  }
+
+  .arrow-mobile {
+    display: block;
   }
 
   .quiz-banner {
