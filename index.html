@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chef Kangsu - Halal Cooking Class</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER / NAVBAR ==================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo-link">
+        <img src="Asset/LogoBlack 1.png" alt="Chef Kangsu Logo" class="logo-img">
+        <div class="logo-text">
+          <span class="logo-name">Chef Kangsu</span>
+          <span class="logo-tagline">Halal Cooking Class</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="#jalur" class="nav-link">Jalur Belajar</a></li>
+          <li class="nav-item"><a href="#kelas" class="nav-link">Kelas</a></li>
+          <li class="nav-item"><a href="#tentang" class="nav-link">Tentang</a></li>
+          <li class="nav-item"><a href="#bundling" class="nav-link">Bundling</a></li>
+        </ul>
+        <div class="mobile-nav-actions">
+          <a href="#login" class="btn btn-outline-dark btn-pill">Login</a>
+          <a href="#signup" class="btn btn-primary btn-pill">Sign Up</a>
+        </div>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button class="icon-btn" aria-label="Cart"><i class="fa-solid fa-cart-shopping"></i></button>
+        <a href="#login" class="btn btn-outline-dark btn-pill">Login</a>
+        <a href="#signup" class="btn btn-primary btn-pill">Sign Up</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" id="home">
+      <div class="hero-bg-visual">
+        <img src="Asset/homebaru3.png" alt="Chef Kangsu - Halal Cooking Class" class="full-hero-bg-img">
+      </div>
+
+      <div class="container hero-container">
+        <div class="hero-content">
+
+          <!-- Badge Tag -->
+          <div class="badge-tag">
+            <img src="Asset/topicardbawah.png" alt="Chef Hat" class="badge-tag-icon">
+            <span>Kelas Masak Online Halal</span>
+          </div>
+
+          <!-- Hero Title dengan Doodle Chef Hat dari foto -->
+          <h1 class="hero-title">
+            Belajar Masak
+            <img src="Asset/herotopi.png" alt="Chef Hat" class="doodle-hat">
+            <br>
+            <span class="text-coral underline-wrapper">
+              Sesuai Tujuanmu
+              <svg class="doodle-underline" viewBox="0 0 580 22" fill="none" preserveAspectRatio="none">
+                <path d="M 4 14 Q 290 4 576 16" stroke="#F25A38" stroke-width="7" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </h1>
+
+          <!-- Deskripsi -->
+          <p class="hero-description">
+            Mulai dari dasar, masak untuk keluarga, atau<br>
+            bangun usaha kuliner dari rumah bersama Chef Kangsu.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="hero-cta-group">
+            <a href="#kelas" class="btn btn-primary btn-pill btn-arrow">
+              Temukan Kelasmu <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="#kelas" class="btn btn-outline-hero">Lihat Semua Kelas</a>
+          </div>
+
+          <!-- Stats Card -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-icon">
+                <img src="Asset/bukucardbawah.png" alt="Kelas" class="stat-card-icon">
+              </div>
+              <div class="stat-info">
+                <span class="stat-number">100+</span>
+                <span class="stat-label">Kelas</span>
+              </div>
+            </div>
+
+            <div class="stat-divider"></div>
+
+            <div class="stat-item">
+              <div class="stat-icon">
+                <img src="Asset/topicardbawah.png" alt="Tahun Pengalaman" class="stat-card-icon">
+              </div>
+              <div class="stat-info">
+                <span class="stat-number">10+</span>
+                <span class="stat-label">Tahun Pengalaman</span>
+              </div>
+            </div>
+
+            <div class="stat-divider"></div>
+
+            <div class="stat-item">
+              <div class="stat-icon">
+                <!-- Ikon Jam (persis template 1Home) -->
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#F25A38" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <div class="stat-info">
+                <span class="stat-number">Belajar</span>
+                <span class="stat-label">Fleksibel</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TUJUAN BELAJAR SECTION ==================== -->
+    <section class="section section-tujuan" id="tujuan">
+      <div class="container">
+        <!-- Decorative Leaves (Tertukar: Left = daundekor2, Right = daundekor1) -->
+        <img src="Asset/daundekor2.png" alt="" class="leaf-decor leaf-left">
+        <img src="Asset/daundekor1.png" alt="" class="leaf-decor leaf-right">
+
+        <div class="section-header text-center">
+          <h2 class="section-title">Kamu Ingin Belajar untuk Apa?</h2>
+          <p class="section-subtitle">Pilih tujuanmu, kami bantu susun kelas yang tepat.</p>
+        </div>
+
+        <div class="grid grid-4 grid-tujuan">
+          <!-- Card 1 -->
+          <div class="card card-tujuan">
+            <div class="card-img-wrapper">
+              <img src="Asset/cardbelajar1.png" alt="Mulai Masak Dari Nol">
+            </div>
+            <h3 class="card-title">Mulai Masak Dari Nol</h3>
+            <p class="card-desc">Belajar teknik dasar dengan langkah yang mudah diikuti.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card card-tujuan">
+            <div class="card-img-wrapper">
+              <img src="Asset/cardbelajar2.png" alt="Masak untuk Keluarga">
+            </div>
+            <h3 class="card-title">Masak untuk Keluarga</h3>
+            <p class="card-desc">Hidangan praktis dan variatif untuk orang tersayang.</p>
+          </div>
+
+          <!-- Card 3 (Highlighted) -->
+          <div class="card card-tujuan card-highlight">
+            <span class="card-badge-top">Jalur Usaha</span>
+            <div class="card-img-wrapper">
+              <img src="Asset/cardbelajar3.png" alt="Mulai Jualan dari Dapur">
+            </div>
+            <h3 class="card-title">Mulai Jualan dari Dapur</h3>
+            <p class="card-desc">Pilih produk pertama dan belajar membuatnya konsisten.</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="card card-tujuan">
+            <div class="card-img-wrapper">
+              <img src="Asset/cardbelajar4.png" alt="Naik Level jadi Master">
+            </div>
+            <h3 class="card-title">Naik Level jadi Master</h3>
+            <p class="card-desc">Kuasai teknik, rasa, tekstur, dan penyajian</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ALUR LEVEL SECTION ==================== -->
+    <section class="section section-level" id="jalur">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2 class="section-title">Mulai dari Levelmu Sekarang</h2>
+        </div>
+
+        <div class="level-flow">
+          <!-- Step 1 -->
+          <div class="level-card">
+            <div class="level-card-header">
+              <div class="level-badge">1</div>
+              <h3 class="level-title">Mulai dari Nol</h3>
+            </div>
+            <p class="level-desc">Belajar dasar-dasar memasak secara bertahap dan terstruktur.</p>
+            <a href="#kelas" class="level-link">Lihat Jalur Belajar <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+
+          <!-- Dashed Arrow 1 -->
+          <div class="level-arrow">
+            <svg width="72" height="16" viewBox="0 0 72 16" fill="none">
+              <path d="M2 8H62" stroke="#5B6B34" stroke-width="2" stroke-dasharray="4 4" stroke-linecap="round"/>
+              <path d="M56 2L64 8L56 14" stroke="#5B6B34" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="level-card">
+            <div class="level-card-header">
+              <div class="level-badge">2</div>
+              <h3 class="level-title">Sudah Bisa Masak</h3>
+            </div>
+            <p class="level-desc">Perluas kemampuan & variasi resep untuk masak lebih percaya diri.</p>
+            <a href="#kelas" class="level-link">Lihat Jalur Belajar <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+
+          <!-- Dashed Arrow 2 -->
+          <div class="level-arrow">
+            <svg width="72" height="16" viewBox="0 0 72 16" fill="none">
+              <path d="M2 8H62" stroke="#5B6B34" stroke-width="2" stroke-dasharray="4 4" stroke-linecap="round"/>
+              <path d="M56 2L64 8L56 14" stroke="#5B6B34" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="level-card">
+            <div class="level-card-header">
+              <div class="level-badge">3</div>
+              <h3 class="level-title">Siap Naik Level</h3>
+            </div>
+            <p class="level-desc">Kuasai teknik lanjutan, plating, dan ide menu kreatif.</p>
+            <a href="#kelas" class="level-link">Lihat Jalur Belajar <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Quiz Banner -->
+        <div class="quiz-banner">
+          <div class="quiz-visual">
+            <img src="Asset/bingung.png" alt="Bingung Pilih Kelas" class="quiz-img">
+          </div>
+          <div class="quiz-content">
+            <h3 class="quiz-title">Masih Bingung Mulai dari Mana?</h3>
+            <p class="quiz-desc">Jawab 3 pertanyaan singkat dan dapatkan rekomendasi kelas sesuai tujuan, pengalaman, dan minatmu.</p>
+          </div>
+          <div class="quiz-action">
+            <button class="btn btn-olive btn-pill btn-arrow" id="open-quiz-btn">
+              Coba Quiz Kelas <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+          <img src="Asset/card daun keatas .png" alt="" class="quiz-leaf-decor">
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== REKOMENDASI KELAS SECTION ==================== -->
+    <section class="section section-rekomendasi" id="kelas">
+      <div class="container">
+        <div class="section-header-flex">
+          <div>
+            <h2 class="section-title">Rekomendasi untuk Memulai</h2>
+          </div>
+          <a href="#semua-kelas" class="link-see-all">Lihat Semua Kelas <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="grid grid-3 grid-courses" id="courses-grid">
+          <!-- Course Card 1 -->
+          <div class="card card-course" data-category="camilan idejualan pemula">
+            <div class="course-thumb">
+              <img src="Asset/siomay.png" alt="Siomay Bandung Saus Kacang Juara">
+              <button class="course-wishlist-btn" aria-label="Simpan ke Wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+            <div class="course-body">
+              <h3 class="course-title">Siomay Bandung Saus Kacang Juara</h3>
+              <div class="course-tags">
+                <span class="tag tag-yellow">Pemula</span>
+                <span class="tag tag-green">Cocok untuk Jualan</span>
+              </div>
+              <div class="course-meta">
+                <span class="meta-rating"><i class="fa-solid fa-star text-gold"></i> <strong>4.8</strong> (1,250)</span>
+                <span class="meta-duration"><i class="fa-regular fa-clock"></i> 15 Video</span>
+              </div>
+              <div class="course-footer">
+                <span class="course-price">Rp 79.000</span>
+                <a href="#kelas" class="btn btn-primary btn-sm">Lihat Kelas</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course Card 2 -->
+          <div class="card card-course" data-category="dessert idejualan pemula">
+            <div class="course-thumb">
+              <img src="Asset/dubai.png" alt="Dessert Viral untuk Ide Jualan">
+              <button class="course-wishlist-btn" aria-label="Simpan ke Wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+            <div class="course-body">
+              <h3 class="course-title">Dessert Viral untuk Ide Jualan</h3>
+              <div class="course-tags">
+                <span class="tag tag-yellow">Pemula</span>
+                <span class="tag tag-green">Tanpa Oven</span>
+              </div>
+              <div class="course-meta">
+                <span class="meta-rating"><i class="fa-solid fa-star text-gold"></i> <strong>4.8</strong> (1,250)</span>
+                <span class="meta-duration"><i class="fa-regular fa-clock"></i> 15 Video</span>
+              </div>
+              <div class="course-footer">
+                <span class="course-price">Rp 69.000</span>
+                <a href="#kelas" class="btn btn-primary btn-sm">Lihat Kelas</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course Card 3 -->
+          <div class="card card-course" data-category="nusantara keluarga menengah">
+            <div class="course-thumb">
+              <img src="Asset/nasi.png" alt="Masakan Nusantara untuk Keluarga">
+              <button class="course-wishlist-btn" aria-label="Simpan ke Wishlist">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+            <div class="course-body">
+              <h3 class="course-title">Masakan Nusantara untuk Keluarga</h3>
+              <div class="course-tags">
+                <span class="tag tag-yellow">Menengah</span>
+                <span class="tag tag-green">Menu Keluarga</span>
+              </div>
+              <div class="course-meta">
+                <span class="meta-rating"><i class="fa-solid fa-star text-gold"></i> <strong>4.8</strong> (1,250)</span>
+                <span class="meta-duration"><i class="fa-regular fa-clock"></i> 15 Video</span>
+              </div>
+              <div class="course-footer">
+                <span class="course-price">Rp 89.000</span>
+                <a href="#kelas" class="btn btn-primary btn-sm">Lihat Kelas</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== JELAJAHI KATEGORI SECTION ==================== -->
+    <section class="section section-kategori">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2 class="section-title">Jelajahi Berdasarkan Jenis Menu</h2>
+          <div class="category-scroll-hint">
+            <span><i class="fa-solid fa-hand-pointer"></i> Geser untuk melihat menu</span>
+            <i class="fa-solid fa-arrow-right-long hint-arrow-anim"></i>
+          </div>
+        </div>
+
+        <div class="category-cards">
+          <a href="#kelas" class="cat-card" data-cat="nusantara">
+            <img src="Asset/Nusantara.png" alt="Nusantara" class="cat-card-img">
+            <span class="cat-card-name">Nusantara</span>
+            <i class="fa-solid fa-chevron-right cat-arrow"></i>
+          </a>
+
+          <a href="#kelas" class="cat-card" data-cat="japanese">
+            <img src="Asset/Japanese.png" alt="Japanese" class="cat-card-img">
+            <span class="cat-card-name">Japanese</span>
+            <i class="fa-solid fa-chevron-right cat-arrow"></i>
+          </a>
+
+          <a href="#kelas" class="cat-card" data-cat="dessert">
+            <img src="Asset/Dessert.png" alt="Dessert & Minuman" class="cat-card-img">
+            <span class="cat-card-name">Dessert &<br>Minuman</span>
+            <i class="fa-solid fa-chevron-right cat-arrow"></i>
+          </a>
+
+          <a href="#kelas" class="cat-card" data-cat="camilan">
+            <img src="Asset/camilan.png" alt="Camilan" class="cat-card-img">
+            <span class="cat-card-name">Camilan</span>
+            <i class="fa-solid fa-chevron-right cat-arrow"></i>
+          </a>
+
+          <a href="#kelas" class="cat-card" data-cat="idejualan">
+            <img src="Asset/idejualan.png" alt="Ide Jualan" class="cat-card-img">
+            <span class="cat-card-name">Ide Jualan</span>
+            <i class="fa-solid fa-chevron-right cat-arrow"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TENTANG / PILAR KEEUNGGULAN ==================== -->
+    <section class="section section-tentang" id="tentang">
+      <div class="container tentang-container">
+        <div class="tentang-visual">
+          <img src="Asset/Tentang.png" alt="Chef Kangsu - Belajar dari Dapur" class="tentang-img">
+        </div>
+
+        <div class="tentang-content">
+          <h2 class="tentang-main-title">Belajar dari Dapur, untuk Semua</h2>
+
+          <div class="pillars-card">
+            <!-- Pillar 1 -->
+            <div class="pillar-item">
+              <div class="pillar-icon">
+                <img src="Asset/topi hijau tentang.png" alt="Chef Profesional" class="pillar-img-icon">
+              </div>
+              <div class="pillar-info">
+                <h3 class="pillar-title">Chef Profesional</h3>
+                <p class="pillar-desc">Belajar langsung dari Chef Kangsu dengan pengalaman lebih dari 10 tahun di dunia kuliner.</p>
+              </div>
+            </div>
+
+            <div class="pillar-divider"></div>
+
+            <!-- Pillar 2 -->
+            <div class="pillar-item">
+              <div class="pillar-icon">
+                <img src="Asset/buku hijau tentang.png" alt="Materi Terstruktur" class="pillar-img-icon">
+              </div>
+              <div class="pillar-info">
+                <h3 class="pillar-title">Materi Terstruktur</h3>
+                <p class="pillar-desc">Kurikulum jelas, video detail, dan resep teruji untuk hasil yang konsisten.</p>
+              </div>
+            </div>
+
+            <div class="pillar-divider"></div>
+
+            <!-- Pillar 3 -->
+            <div class="pillar-item">
+              <div class="pillar-icon">
+                <img src="Asset/orang hijau tentang.png" alt="Komunitas Aktif" class="pillar-img-icon">
+              </div>
+              <div class="pillar-info">
+                <h3 class="pillar-title">Komunitas Aktif</h3>
+                <p class="pillar-desc">Bergabung dengan ribuan member yang saling berbagi dan bertumbuh bersama.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src="Asset/daundekor1.png" alt="" class="tentang-leaf-decor">
+    </section>
+
+    <!-- ==================== TESTIMONIAL CAROUSEL SECTION ==================== -->
+    <section class="section section-testimonial">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2 class="section-title">Cerita dari Member Chef Kangsu</h2>
+        </div>
+
+        <div class="testimonial-slider-wrapper">
+          <button class="slider-arrow prev-btn" id="testimonial-prev" aria-label="Previous Testimonial">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+
+          <div class="testimonial-slider" id="testimonial-slider">
+            <!-- Testimonial 1 -->
+            <div class="card card-testimonial active">
+              <div class="testimonial-user">
+                <img src="Asset/Ellipse 17.png" alt="Rina Apriyani" class="user-avatar">
+                <div class="user-info">
+                  <h4 class="user-name">Rina Apriyani</h4>
+                  <span class="user-role">Ibu Rumah Tangga</span>
+                  <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                  <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="card card-testimonial active">
+              <div class="testimonial-user">
+                <img src="Asset/Ellipse 18.png" alt="Dedi Hermawan" class="user-avatar">
+                <div class="user-info">
+                  <h4 class="user-name">Dedi Hermawan</h4>
+                  <span class="user-role">Food Seller</span>
+                  <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                  <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="card card-testimonial active">
+              <div class="testimonial-user">
+                <img src="Asset/Ellipse 19.png" alt="Michel Aisyah" class="user-avatar">
+                <div class="user-info">
+                  <h4 class="user-name">Michel Aisyah</h4>
+                  <span class="user-role">Username</span>
+                  <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                  <p class="testimonial-text">Lorem Ipsum is simply dummy text of the printing.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="slider-arrow next-btn" id="testimonial-next" aria-label="Next Testimonial">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <div class="slider-dots" id="slider-dots">
+          <span class="dot active" data-index="0"></span>
+          <span class="dot" data-index="1"></span>
+          <span class="dot" data-index="2"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== BANNER CTA BOTTOM ==================== -->
+    <section class="section section-cta-bottom">
+      <div class="container">
+        <div class="cta-card">
+          <div class="cta-content">
+            <h2 class="cta-title">Siap Memulai Perjalanan Masakmu?</h2>
+            <p class="cta-desc">Temukan kelas yang tepat dan capai tujuan masakmu bersama Chef Kangsu.</p>
+            <a href="#kelas" class="btn btn-white btn-pill">Temuka Kelasmu</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <!-- Col 1: Brand Info -->
+      <div class="footer-col brand-col">
+        <a href="#" class="footer-logo-link">
+          <img src="Asset/logowhite.png" alt="Chef Kangsu Halal Cooking Class" class="footer-logo">
+          <div class="footer-logo-text">
+            <span class="footer-logo-name">Chef Kangsu</span>
+            <span class="footer-logo-tagline">Halal Cooking Class</span>
+          </div>
+        </a>
+        <p class="footer-brand-desc">
+          Platform belajar masak online halal bersama Chef Kangsu. Praktis, jelas, dan bisa dipraktikkan di rumah.
+        </p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+        <p class="copyright">&copy; 2026 Chef Kangsu, All right reserved</p>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#kelas">Kelas</a></li>
+          <li><a href="#jalur">Jalur Belajar</a></li>
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="#bundling">Bundling</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Jalur Belajar -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Jalur Belajar</h4>
+        <ul class="footer-menu">
+          <li><a href="#jalur">Mulai dari Nol</a></li>
+          <li><a href="#jalur">Sudah bisa Masak</a></li>
+          <li><a href="#jalur">Siap Naik Level</a></li>
+          <li><a href="#quiz">Rekomendasi Quiz</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Bantuan -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Bantuan</h4>
+        <ul class="footer-menu">
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#panduan">Panduan Belajar</a></li>
+          <li><a href="#privasi">Kebijakan Privasi</a></li>
+          <li><a href="#syarat">Syarat & Ketentuan</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 5: Kontak Kami -->
+      <div class="footer-col contact-col">
+        <h4 class="footer-heading">Kontak Kami</h4>
+        <ul class="footer-contact-list">
+          <li>
+            <i class="fa-regular fa-envelope"></i>
+            <span>admin@email.com</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone"></i>
+            <span>0813-1381-3337</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Komplek Taman Firdaus, Blk. E No.129, Pakuhaji, Kec. Ngamprah, Kabupaten Bandung Barat, Jawa Barat 40552</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== INTERACTIVE QUIZ MODAL ==================== -->
+  <div class="modal" id="quiz-modal">
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close" aria-label="Tutup Kuis"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header text-center">
+        <h3>Quiz Rekomendasi Kelas</h3>
+        <p>Temukan kelas memasak yang paling pas untukmu</p>
+      </div>
+      <div class="quiz-progress">
+        <div class="quiz-progress-bar" id="quiz-progress-bar"></div>
+      </div>
+      <div class="modal-body" id="quiz-body">
+        <!-- Dynamic Quiz Content handled by main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== FLOATING WHATSAPP CTA ==================== -->
+  <a href="https://wa.me/6281313813337?text=Halo%20Chef%20Kangsu,%20saya%20tertarik%20dengan%20kelas%20memasak%20online" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="Hubungi Kami di WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="whatsapp-tooltip">Tanya Seputar Kelas</span>
+  </a>
+
+  <script src="main.js"></script>
+</body>
+</html>
