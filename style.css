@@ -2001,6 +2001,11 @@ button {
     justify-content: center;
   }
 
+  /* Sembunyikan semua ikon stat di mobile */
+  .hero-stats .stat-icon {
+    display: none;
+  }
+
   .stat-card-icon,
   .stat-icon svg {
     width: 22px;
@@ -2039,12 +2044,13 @@ button {
     line-height: 1.1;
   }
 
+  /* Belajar Fleksibel: tengah, teks rata kiri */
   .stat-item-belajar {
     justify-content: center;
   }
 
   .stat-item-belajar .stat-info {
-    text-align: center;
+    text-align: left;
   }
 
   .stat-divider {
