@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Program Affiliate - Chef Kangsu</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="user-panel-body">
+
+  <div class="user-layout-container">
+    
+    <!-- ==================== SIDEBAR ==================== -->
+    <aside class="user-sidebar" id="user-sidebar">
+      
+      <div class="user-sidebar-top">
+        <a href="index.html" class="user-sidebar-brand">
+          <img src="Asset/LogoBlack 1.png" alt="Chef Kangsu Logo" class="brand-logo-img">
+          <div class="brand-text-block">
+            <span class="brand-title">Chef Kangsu</span>
+            <span class="brand-subtitle">Halal Cooking Class</span>
+          </div>
+        </a>
+        <button class="user-bell-btn" aria-label="Notifikasi">
+          <i class="fa-regular fa-bell"></i>
+        </button>
+      </div>
+
+      <a href="user-profile.html" class="user-mini-profile">
+        <div class="user-avatar-circle">MF</div>
+        <div class="user-meta-info">
+          <h4 class="user-name-label">Muhammad F.</h4>
+          <span class="user-status-tag">
+            <span class="status-dot-active"></span> Member Aktif
+          </span>
+        </div>
+      </a>
+
+      <nav class="user-nav-menu">
+        <ul class="user-nav-list">
+          <li class="user-nav-item">
+            <a href="user-dashboard.html" class="user-nav-link">
+              <i class="fa-solid fa-house"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="user-nav-item">
+            <a href="user-kelas.html" class="user-nav-link">
+              <i class="fa-solid fa-book-open"></i>
+              <span>Kelas Saya</span>
+            </a>
+          </li>
+          <li class="user-nav-item">
+            <a href="user-wishlist.html" class="user-nav-link">
+              <i class="fa-regular fa-heart"></i>
+              <span>Wishlist</span>
+            </a>
+          </li>
+          <li class="user-nav-item">
+            <a href="user-riwayat.html" class="user-nav-link">
+              <i class="fa-regular fa-file-lines"></i>
+              <span>Riwayat</span>
+            </a>
+          </li>
+          <li class="user-nav-item">
+            <a href="user-affiliate.html" class="user-nav-link active">
+              <i class="fa-solid fa-users"></i>
+              <span>Affiliate</span>
+            </a>
+          </li>
+          <li class="user-nav-item">
+            <a href="user-profile.html" class="user-nav-link">
+              <i class="fa-regular fa-user"></i>
+              <span>Profil</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="user-sidebar-bottom">
+        <a href="index.html" class="user-bottom-link">
+          <i class="fa-solid fa-house-chimney"></i>
+          <span>Ke Homepage</span>
+        </a>
+        <button type="button" class="user-bottom-link btn-logout" id="btn-user-logout">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <span>Keluar</span>
+        </button>
+      </div>
+
+    </aside>
+
+    <!-- Mobile Header Bar -->
+    <header class="user-mobile-topbar">
+      <button class="user-mobile-hamburger" id="user-mobile-toggle" aria-label="Buka Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <a href="index.html" class="user-sidebar-brand">
+        <img src="Asset/LogoBlack 1.png" alt="Chef Kangsu Logo" class="brand-logo-img">
+        <span class="brand-title">Chef Kangsu</span>
+      </a>
+      <a href="user-profile.html" class="user-avatar-circle mini">MF</a>
+    </header>
+
+    <!-- ==================== MAIN CONTENT AREA ==================== -->
+    <main class="user-main-content">
+      
+      <div class="user-content-header with-icon-row">
+        <div class="header-icon-orange">
+          <i class="fa-solid fa-users"></i>
+        </div>
+        <div>
+          <h1 class="user-greeting-title">Program Affiliate</h1>
+          <p class="user-greeting-sub">Bagikan kelas &amp; dapatkan komisi setiap penjualan</p>
+        </div>
+      </div>
+
+      <!-- Top Affiliate Commission Banner + 3 Mini Stats -->
+      <div class="affiliate-top-hero-row">
+        
+        <!-- Big Orange Commission Card -->
+        <div class="affiliate-big-card">
+          <div class="affiliate-decor-pattern"></div>
+          <div class="affiliate-card-inner">
+            <div class="affiliate-label-top">Total Komisi Siap Dicairkan</div>
+            <div class="affiliate-amount-big">Rp 0</div>
+            <a href="#pencairan" class="btn-payout-white">
+              <i class="fa-solid fa-file-invoice-dollar"></i>
+              <span>Ajukan Pencairan</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 3 Mini Stats Column -->
+        <div class="affiliate-three-stats">
+          
+          <div class="mini-stat-card">
+            <div class="mini-stat-icon-wrap icon-click">
+              <i class="fa-solid fa-arrow-pointer"></i>
+            </div>
+            <div class="mini-stat-info">
+              <span class="mini-stat-val">0</span>
+              <span class="mini-stat-label">Total Klik Link</span>
+            </div>
+          </div>
+
+          <div class="mini-stat-card">
+            <div class="mini-stat-icon-wrap icon-cart">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+            <div class="mini-stat-info">
+              <span class="mini-stat-val">0</span>
+              <span class="mini-stat-label">Berhasil Beli</span>
+            </div>
+          </div>
+
+          <div class="mini-stat-card">
+            <div class="mini-stat-icon-wrap icon-percent">
+              <i class="fa-solid fa-chart-pie"></i>
+            </div>
+            <div class="mini-stat-info">
+              <span class="mini-stat-val">0%</span>
+              <span class="mini-stat-label">Conv. Rate</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Section: Link Referral Kamu -->
+      <section class="user-white-box affiliate-section-box">
+        <div class="box-section-heading">
+          <i class="fa-solid fa-link text-coral"></i>
+          <h2 class="box-inner-title">Link Referral Kamu</h2>
+        </div>
+
+        <div class="referral-links-grid">
+          
+          <!-- Link 1: Umum (Semua Kelas) -->
+          <div class="referral-link-item">
+            <div class="ref-kind-label">Link umum (semua kelas)</div>
+            <h4 class="ref-item-title">Semua Kelas Chef Kangsu</h4>
+            <div class="ref-url-preview">chefkangsu.com?ref=KANGSU-XL8MNQ</div>
+            <div class="ref-buttons-row">
+              <button type="button" class="btn-ref-action btn-copy-ref" data-link="https://chefkangsu.com?ref=KANGSU-XL8MNQ">
+                <i class="fa-regular fa-copy"></i> Salin
+              </button>
+              <a href="https://wa.me/?text=Yuk%20belajar%20masak%20halal%20di%20Chef%20Kangsu%20https%3A%2F%2Fchefkangsu.com%3Fref%3DKANGSU-XL8MNQ" target="_blank" rel="noopener" class="btn-ref-action btn-wa-ref">
+                <i class="fa-brands fa-whatsapp"></i> WA
+              </a>
+            </div>
+          </div>
+
+          <!-- Link 2: Snack After Ied -->
+          <div class="referral-link-item">
+            <div class="ref-kind-label">Link spesifik kelas</div>
+            <h4 class="ref-item-title">Snack After Ied</h4>
+            <div class="ref-url-preview">chefkangsu.com/kelas/snack-after-ied?ref=KANGSU-XL8MNQ</div>
+            <div class="ref-buttons-row">
+              <button type="button" class="btn-ref-action btn-copy-ref" data-link="https://chefkangsu.com/kelas/snack-after-ied?ref=KANGSU-XL8MNQ">
+                <i class="fa-regular fa-copy"></i> Salin
+              </button>
+              <a href="https://wa.me/?text=Ikut%20kelas%20Snack%20After%20Ied%20bersama%20Chef%20Kangsu%20https%3A%2F%2Fchefkangsu.com%2Fkelas%2Fsnack-after-ied%3Fref%3DKANGSU-XL8MNQ" target="_blank" rel="noopener" class="btn-ref-action btn-wa-ref">
+                <i class="fa-brands fa-whatsapp"></i> WA
+              </a>
+            </div>
+          </div>
+
+          <!-- Link 3: Turkiye Menu ala Kangsu -->
+          <div class="referral-link-item">
+            <div class="ref-kind-label">Link spesifik kelas</div>
+            <h4 class="ref-item-title">Turkiye Menu ala Kangsu</h4>
+            <div class="ref-url-preview">chefkangsu.com/kelas/turkiye-menu-ala-kangsu?ref=KANGSU-XL8MNQ</div>
+            <div class="ref-buttons-row">
+              <button type="button" class="btn-ref-action btn-copy-ref" data-link="https://chefkangsu.com/kelas/turkiye-menu-ala-kangsu?ref=KANGSU-XL8MNQ">
+                <i class="fa-regular fa-copy"></i> Salin
+              </button>
+              <a href="https://wa.me/?text=Ikut%20kelas%20Turkiye%20Menu%20ala%20Kangsu%20https%3A%2F%2Fchefkangsu.com%2Fkelas%2Fturkiye-menu-ala-kangsu%3Fref%3DKANGSU-XL8MNQ" target="_blank" rel="noopener" class="btn-ref-action btn-wa-ref">
+                <i class="fa-brands fa-whatsapp"></i> WA
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Section: Riwayat Komisi -->
+      <section class="user-white-box affiliate-section-box">
+        <div class="box-header-row">
+          <div class="box-section-heading">
+            <i class="fa-solid fa-file-lines text-coral"></i>
+            <h2 class="box-inner-title">Riwayat Komisi</h2>
+          </div>
+          <div class="affiliate-filter-tabs">
+            <button type="button" class="aff-tab-btn active">Semua</button>
+            <button type="button" class="aff-tab-btn">Siap Cairkan</button>
+            <button type="button" class="aff-tab-btn">Pending</button>
+            <button type="button" class="aff-tab-btn">Sudah Dibayar</button>
+          </div>
+        </div>
+
+        <div class="affiliate-empty-table">
+          <div class="empty-doc-icon">
+            <i class="fa-regular fa-file-lines"></i>
+          </div>
+          <p class="empty-table-text">Belum ada komisi</p>
+        </div>
+      </section>
+
+      <!-- Section: Ajukan Pencairan Komisi -->
+      <section class="user-white-box affiliate-section-box" id="pencairan">
+        <div class="box-section-heading">
+          <i class="fa-solid fa-receipt text-coral"></i>
+          <h2 class="box-inner-title">Ajukan Pencairan Komisi</h2>
+        </div>
+
+        <div class="payout-layout-grid">
+          
+          <!-- Left: Payout Summary Details -->
+          <div class="payout-summary-card">
+            <div class="payout-summary-row">
+              <span class="payout-row-label">Saldo siap cairkan</span>
+              <span class="payout-row-val text-green">Rp 0</span>
+            </div>
+            <div class="payout-summary-row">
+              <span class="payout-row-label">Saldo pending</span>
+              <span class="payout-row-val">Rp 0</span>
+            </div>
+            <div class="payout-summary-row">
+              <span class="payout-row-label">Total sudah dicairkan</span>
+              <span class="payout-row-val">Rp 0</span>
+            </div>
+            <div class="payout-summary-row">
+              <span class="payout-row-label">Minimum pencairan</span>
+              <span class="payout-row-val text-coral">Rp 100.000</span>
+            </div>
+            <div class="payout-summary-row">
+              <span class="payout-row-label">Proses pencairan</span>
+              <span class="payout-row-val">1–3 hari kerja</span>
+            </div>
+          </div>
+
+          <!-- Right: Payout Form -->
+          <form class="payout-form-card" id="form-payout" novalidate>
+            <div class="payout-warning-banner">
+              <i class="fa-solid fa-circle-info"></i>
+              <span>Saldo kamu belum mencapai minimum Rp 100.000. Terus bagikan link referral untuk menambah komisi!</span>
+            </div>
+
+            <div class="payout-form-row">
+              <div class="form-group-field">
+                <label>Nama Bank</label>
+                <input type="text" class="user-input-base" placeholder="Contoh: BCA, BNI, Mandiri, BRI" name="bank">
+              </div>
+              <div class="form-group-field">
+                <label>Jumlah Pencairan</label>
+                <input type="text" class="user-input-base" value="Rp 0" readonly>
+                <small class="field-hint">Semua saldo yang sudah disetujui akan dicairkan sekaligus</small>
+              </div>
+            </div>
+
+            <div class="form-group-field">
+              <label>Nomor Rekening</label>
+              <input type="text" class="user-input-base" placeholder="Masukkan nomor rekening" name="acc_number">
+            </div>
+
+            <div class="form-group-field">
+              <label>Nama Pemilik Rekening</label>
+              <input type="text" class="user-input-base" placeholder="Sesuai buku tabungan" name="acc_name">
+            </div>
+
+            <button type="button" class="btn-submit-payout disabled" id="btn-submit-payout">
+              <i class="fa-solid fa-file-invoice-dollar"></i>
+              <span>Ajukan Pencairan Rp 0</span>
+            </button>
+
+            <p class="payout-footer-note">Admin akan memproses dalam 1–3 hari kerja. Notifikasi akan dikirim via WhatsApp.</p>
+          </form>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- Floating WhatsApp Action -->
+  <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" class="user-floating-wa" aria-label="Hubungi Kami di WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span>Hubungi Kami</span>
+  </a>
+
+  <!-- Toast Container -->
+  <div class="toast-notification" id="toast-notification">
+    <i class="fa-solid fa-circle-check toast-icon"></i>
+    <span id="toast-message"></span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="main.js"></script>
+</body>
+</html>

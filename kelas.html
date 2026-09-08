@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog Kelas Kami - Chef Kangsu</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER / NAVBAR ==================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo-link">
+        <img src="Asset/LogoBlack 1.png" alt="Chef Kangsu Logo" class="logo-img">
+        <div class="logo-text">
+          <span class="logo-name">Chef Kangsu</span>
+          <span class="logo-tagline">Halal Cooking Class</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="index.html#jalur" class="nav-link">Jalur Belajar</a></li>
+          <li class="nav-item"><a href="index.html#tentang" class="nav-link">Tentang</a></li>
+          <li class="nav-item"><a href="kelas.html" class="nav-link active">Kelas</a></li>
+          <li class="nav-item"><a href="bundling.html" class="nav-link">Bundling</a></li>
+        </ul>
+        <div class="mobile-nav-actions">
+          <a href="login.html" class="btn btn-outline-dark btn-pill">Login</a>
+          <a href="register.html" class="btn btn-primary btn-pill">Sign Up</a>
+        </div>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button class="icon-btn" aria-label="Cart"><i class="fa-solid fa-cart-shopping"></i></button>
+        <a href="login.html" class="btn btn-outline-dark btn-pill">Login</a>
+        <a href="register.html" class="btn btn-primary btn-pill">Sign Up</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== KELAS HERO BANNER ==================== -->
+    <section class="section-kelas-hero">
+      <div class="kelas-hero-overlay"></div>
+      <div class="container kelas-hero-content">
+        <h1 class="kelas-hero-title">Kelas Kami</h1>
+      </div>
+    </section>
+
+    <!-- ==================== SEARCH & CATEGORY FILTER ==================== -->
+    <section class="section-catalog-controls">
+      <div class="container catalog-container">
+        <!-- Live Search Bar -->
+        <div class="search-bar-wrapper">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="catalog-search-input" class="search-input-field" placeholder="Cari kelas masak..." autocomplete="off">
+          <button class="clear-search-btn" id="clear-search-btn" aria-label="Hapus Pencarian"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <!-- Category Pills -->
+        <div class="category-pills-wrapper">
+          <div class="category-pills-list" id="category-pills-list">
+            <button class="pill-category-btn active" data-filter="all">Semua Kelas</button>
+            <button class="pill-category-btn" data-filter="asia">Asia</button>
+            <button class="pill-category-btn" data-filter="nusantara">Nusantara</button>
+            <button class="pill-category-btn" data-filter="jepang">Jepang</button>
+            <button class="pill-category-btn" data-filter="dessert">Dessert</button>
+            <button class="pill-category-btn" data-filter="bakery">Bakery</button>
+            <button class="pill-category-btn" data-filter="minuman">Minuman</button>
+            <button class="pill-category-btn" data-filter="spesial">Kelas Spesial</button>
+            <button class="pill-category-btn" data-filter="camilan">+ Lainnya</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CATALOG GRID SECTION ==================== -->
+    <section class="section-catalog-grid">
+      <div class="container catalog-container">
+
+        <div class="grid grid-4 grid-catalog" id="catalog-course-grid">
+
+          <!-- Card 1: All About Teriyaki -->
+          <div class="card-catalog-item" data-category="jepang asia" data-title="All About Teriyaki ala Kangsu" data-price="150000">
+            <div class="catalog-thumb">
+              <img src="Asset/kelas/allaboutteriyaki.png" alt="All About Teriyaki ala Kangsu">
+            </div>
+            <div class="catalog-item-body">
+              <h3 class="catalog-item-title">All About Teriyaki ala Kangsu</h3>
+              <span class="catalog-badge-tag tag-jepang">Jepang</span>
+              <div class="catalog-item-footer">
+                <span class="catalog-price">Rp 150.000</span>
+                <div class="catalog-actions">
+                  <a href="kelas-detail.html" class="btn btn-outline-dark btn-sm">Lihat Kelas <i class="fa-solid fa-arrow-right"></i></a>
+                  <button class="btn-cart-icon btn-add-cart" aria-label="Tambah ke Keranjang"><i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Siomay & Batagor -->
+          <div class="card-catalog-item" data-category="nusantara camilan" data-title="Siomay dan Batagor Bandung Komplet ala Kangsu" data-price="150000">
+            <div class="catalog-thumb">
+              <img src="Asset/kelas/siomaybatagor.png" alt="Siomay & Batagor Bandung Komplet ala Kangsu">
+            </div>
+            <div class="catalog-item-body">
+              <h3 class="catalog-item-title">Siomay & Batagor Bandung Komplet ala Kangsu</h3>
+              <span class="catalog-badge-tag tag-nusantara">Nusantara</span>
+              <div class="catalog-item-footer">
+                <span class="catalog-price">Rp 150.000</span>
+                <div class="catalog-actions">
+                  <a href="kelas-detail.html" class="btn btn-outline-dark btn-sm">Lihat Kelas <i class="fa-solid fa-arrow-right"></i></a>
+                  <button class="btn-cart-icon btn-add-cart" aria-label="Tambah ke Keranjang"><i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Japanese Street Food Part 2 -->
+          <div class="card-catalog-item" data-category="jepang asia camilan" data-title="Japanese Street Food Part 2" data-price="150000">
+            <div class="catalog-thumb">
+              <img src="Asset/kelas/japanesestreetfoodpt2.png" alt="Japanese Street Food Part 2">
+            </div>
+            <div class="catalog-item-body">
+              <h3 class="catalog-item-title">Japanese Street Food Part 2</h3>
+              <span class="catalog-badge-tag tag-jepang">Jepang</span>
+              <div class="catalog-item-footer">
+                <span class="catalog-price">Rp 150.000</span>
+                <div class="catalog-actions">
+                  <a href="kelas-detail.html" class="btn btn-outline-dark btn-sm">Lihat Kelas <i class="fa-solid fa-arrow-right"></i></a>
+                  <button class="btn-cart-icon btn-add-cart" aria-label="Tambah ke Keranjang"><i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Japanese Street Food Part 3 -->
+          <div class="card-catalog-item" data-category="jepang asia minuman" data-title="Japanese Street Food Part 3" data-price="150000">
+            <div class="catalog-thumb">
+              <img src="Asset/kelas/japanstreetpt3.png" alt="Japanese Street Food Part 3">
+            </div>
+            <div class="catalog-item-body">
+              <h3 class="catalog-item-title">Japanese Street Food Part 3</h3>
+              <span class="catalog-badge-tag tag-jepang">Jepang</span>
+              <div class="catalog-item-footer">
+                <span class="catalog-price">Rp 150.000</span>
+                <div class="catalog-actions">
+                  <a href="kelas-detail.html" class="btn btn-outline-dark btn-sm">Lihat Kelas <i class="fa-solid fa-arrow-right"></i></a>
+                  <button class="btn-cart-icon btn-add-cart" aria-label="Tambah ke Keranjang"><i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Fire Flying Chicken -->
+          <div class="card-catalog-item" data-category="spesial asia" data-title="Fire Flying Chicken Crispy Viral" data-price="150000">
+            <div class="catalog-thumb">
+              <img src="Asset/kelas/flyingchicken.png" alt="Fire Flying Chicken Crispy Viral">
+            </div>
+            <div class="catalog-item-body">
+              <h3 class="catalog-item-title">Fire Flying Chicken Crispy Viral</h3>
+              <span class="catalog-badge-tag tag-spesial">Kelas Spesial</span>
+              <div class="catalog-item-footer">
+                <span class="catalog-price">Rp 150.000</span>
+                <div class="catalog-actions">
+                  <a href="kelas-detail.html" class="btn btn-outline-dark btn-sm">Lihat Kelas <i class="fa-solid fa-arrow-right"></i></a>
+                  <button class="btn-cart-icon btn-add-cart" aria-label="Tambah ke Keranjang"><i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: Olahan Roti ala Kangsu -->
+          <div class="card-catalog-item" data-category="bakery dessert" data-title="Olahan Roti ala Kangsu" data-price="150000">
+            <div class="catalog-thumb">
+              <img src="Asset/kelas/olahanrotialakangsu.png" alt="Olahan Roti ala Kangsu">
+            </div>
+            <div class="catalog-item-body">
+              <h3 class="catalog-item-title">Olahan Roti ala Kangsu</h3>
+              <span class="catalog-badge-tag tag-bakery">Bakery</span>
+              <div class="catalog-item-footer">
+                <span class="catalog-price">Rp 150.000</span>
+                <div class="catalog-actions">
+                  <a href="kelas-detail.html" class="btn btn-outline-dark btn-sm">Lihat Kelas <i class="fa-solid fa-arrow-right"></i></a>
+                  <button class="btn-cart-icon btn-add-cart" aria-label="Tambah ke Keranjang"><i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 7: Menu Cuan Ramadhan -->
+          <div class="card-catalog-item" data-category="spesial nusantara minuman" data-title="Menu Cuan Ramadhan ala Kangsu" data-price="150000">
+            <div class="catalog-thumb">
+              <img src="Asset/kelas/cuanramadhan.png" alt="Menu Cuan Ramadhan ala Kangsu">
+            </div>
+            <div class="catalog-item-body">
+              <h3 class="catalog-item-title">Menu Cuan Ramadhan ala Kangsu</h3>
+              <span class="catalog-badge-tag tag-spesial">Kelas Spesial</span>
+              <div class="catalog-item-footer">
+                <span class="catalog-price">Rp 150.000</span>
+                <div class="catalog-actions">
+                  <a href="kelas-detail.html" class="btn btn-outline-dark btn-sm">Lihat Kelas <i class="fa-solid fa-arrow-right"></i></a>
+                  <button class="btn-cart-icon btn-add-cart" aria-label="Tambah ke Keranjang"><i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 8: Snack After Ied -->
+          <div class="card-catalog-item" data-category="camilan dessert" data-title="Snack After Ied ala Kangsu" data-price="150000">
+            <div class="catalog-thumb">
+              <img src="Asset/kelas/snackafteried.png" alt="Snack After Ied ala Kangsu">
+            </div>
+            <div class="catalog-item-body">
+              <h3 class="catalog-item-title">Snack After Ied ala Kangsu</h3>
+              <span class="catalog-badge-tag tag-dessert">Dessert</span>
+              <div class="catalog-item-footer">
+                <span class="catalog-price">Rp 150.000</span>
+                <div class="catalog-actions">
+                  <a href="kelas-detail.html" class="btn btn-outline-dark btn-sm">Lihat Kelas <i class="fa-solid fa-arrow-right"></i></a>
+                  <button class="btn-cart-icon btn-add-cart" aria-label="Tambah ke Keranjang"><i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- No Results State -->
+        <div class="no-results-box" id="no-results-box" style="display: none;">
+          <i class="fa-solid fa-magnifying-glass no-results-icon"></i>
+          <h3>Kelas tidak ditemukan</h3>
+          <p>Coba gunakan kata kunci pencarian lain atau pilih kategori yang tersedia.</p>
+          <button class="btn btn-primary btn-pill" id="reset-filter-btn">Reset Filter</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== BANNER CTA BOTTOM ==================== -->
+    <section class="section section-cta-bottom">
+      <div class="container">
+        <div class="cta-card">
+          <div class="cta-content">
+            <h2 class="cta-title">Siap Memulai Perjalanan Masakmu?</h2>
+            <p class="cta-desc">Temukan kelas yang tepat dan capai tujuan masakmu bersama Chef Kangsu.</p>
+            <a href="bundling.html" class="btn btn-white btn-pill">Lihat Paket Bundling</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <!-- Col 1: Brand Info -->
+      <div class="footer-col brand-col">
+        <a href="index.html" class="footer-logo-link">
+          <img src="Asset/logowhite.png" alt="Chef Kangsu Halal Cooking Class" class="footer-logo">
+          <div class="footer-logo-text">
+            <span class="footer-logo-name">Chef Kangsu</span>
+            <span class="footer-logo-tagline">Halal Cooking Class</span>
+          </div>
+        </a>
+        <p class="footer-brand-desc">
+          Platform belajar masak online halal bersama Chef Kangsu. Praktis, jelas, dan bisa dipraktikkan di rumah.
+        </p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+        <p class="copyright">&copy; 2026 Chef Kangsu, All right reserved</p>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="kelas.html">Kelas</a></li>
+          <li><a href="index.html#jalur">Jalur Belajar</a></li>
+          <li><a href="index.html#tentang">Tentang</a></li>
+          <li><a href="bundling.html">Bundling</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Jalur Belajar -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Jalur Belajar</h4>
+        <ul class="footer-menu">
+          <li><a href="index.html#jalur">Mulai dari Nol</a></li>
+          <li><a href="index.html#jalur">Sudah bisa Masak</a></li>
+          <li><a href="index.html#jalur">Siap Naik Level</a></li>
+          <li><a href="index.html#quiz">Rekomendasi Quiz</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Bantuan -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Bantuan</h4>
+        <ul class="footer-menu">
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#panduan">Panduan Belajar</a></li>
+          <li><a href="#privasi">Kebijakan Privasi</a></li>
+          <li><a href="#syarat">Syarat & Ketentuan</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 5: Kontak Kami -->
+      <div class="footer-col contact-col">
+        <h4 class="footer-heading">Kontak Kami</h4>
+        <ul class="footer-contact-list">
+          <li>
+            <i class="fa-regular fa-envelope"></i>
+            <span>admin@email.com</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone"></i>
+            <span>0813-1381-3337</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Komplek Taman Firdaus, Blk. E No.129, Pakuhaji, Kec. Ngamprah, Kabupaten Bandung Barat, Jawa Barat 40552</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== FLOATING WHATSAPP CTA ==================== -->
+  <a href="https://wa.me/6281313813337?text=Halo%20Chef%20Kangsu,%20saya%20ingin%20bertanya%20tentang%20katalog%20kelas" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="Hubungi Kami di WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="whatsapp-tooltip">Tanya Seputar Kelas</span>
+  </a>
+
+  <!-- ==================== TOAST NOTIFICATION ==================== -->
+  <div class="toast-notification" id="toast-notification">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toast-message">Kelas berhasil ditambahkan ke keranjang!</span>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

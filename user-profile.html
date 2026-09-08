@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Saya - Chef Kangsu</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="user-panel-body">
+
+  <div class="user-layout-container">
+    
+    <!-- ==================== SIDEBAR ==================== -->
+    <aside class="user-sidebar" id="user-sidebar">
+      
+      <div class="user-sidebar-top">
+        <a href="index.html" class="user-sidebar-brand">
+          <img src="Asset/LogoBlack 1.png" alt="Chef Kangsu Logo" class="brand-logo-img">
+          <div class="brand-text-block">
+            <span class="brand-title">Chef Kangsu</span>
+            <span class="brand-subtitle">Halal Cooking Class</span>
+          </div>
+        </a>
+        <button class="user-bell-btn" aria-label="Notifikasi">
+          <i class="fa-regular fa-bell"></i>
+        </button>
+      </div>
+
+      <a href="user-profile.html" class="user-mini-profile">
+        <div class="user-avatar-circle">MF</div>
+        <div class="user-meta-info">
+          <h4 class="user-name-label">Muhammad F.</h4>
+          <span class="user-status-tag">
+            <span class="status-dot-active"></span> Member Aktif
+          </span>
+        </div>
+      </a>
+
+      <nav class="user-nav-menu">
+        <ul class="user-nav-list">
+          <li class="user-nav-item">
+            <a href="user-dashboard.html" class="user-nav-link">
+              <i class="fa-solid fa-house"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="user-nav-item">
+            <a href="user-kelas.html" class="user-nav-link">
+              <i class="fa-solid fa-book-open"></i>
+              <span>Kelas Saya</span>
+            </a>
+          </li>
+          <li class="user-nav-item">
+            <a href="user-wishlist.html" class="user-nav-link">
+              <i class="fa-regular fa-heart"></i>
+              <span>Wishlist</span>
+            </a>
+          </li>
+          <li class="user-nav-item">
+            <a href="user-riwayat.html" class="user-nav-link">
+              <i class="fa-regular fa-file-lines"></i>
+              <span>Riwayat</span>
+            </a>
+          </li>
+          <li class="user-nav-item">
+            <a href="user-affiliate.html" class="user-nav-link">
+              <i class="fa-solid fa-users"></i>
+              <span>Affiliate</span>
+            </a>
+          </li>
+          <li class="user-nav-item">
+            <a href="user-profile.html" class="user-nav-link active">
+              <i class="fa-regular fa-user"></i>
+              <span>Profil</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="user-sidebar-bottom">
+        <a href="index.html" class="user-bottom-link">
+          <i class="fa-solid fa-house-chimney"></i>
+          <span>Ke Homepage</span>
+        </a>
+        <button type="button" class="user-bottom-link btn-logout" id="btn-user-logout">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <span>Keluar</span>
+        </button>
+      </div>
+
+    </aside>
+
+    <!-- Mobile Header Bar -->
+    <header class="user-mobile-topbar">
+      <button class="user-mobile-hamburger" id="user-mobile-toggle" aria-label="Buka Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <a href="index.html" class="user-sidebar-brand">
+        <img src="Asset/LogoBlack 1.png" alt="Chef Kangsu Logo" class="brand-logo-img">
+        <span class="brand-title">Chef Kangsu</span>
+      </a>
+      <a href="user-profile.html" class="user-avatar-circle mini">MF</a>
+    </header>
+
+    <!-- ==================== MAIN CONTENT AREA ==================== -->
+    <main class="user-main-content">
+      
+      <div class="user-content-header">
+        <h1 class="user-greeting-title">Profil Saya</h1>
+        <p class="user-greeting-sub">Kelola data diri dan pengaturan akun</p>
+      </div>
+
+      <!-- 2 Columns Profile Layout -->
+      <div class="profile-layout-grid">
+        
+        <!-- ================= KOLOM KIRI ================= -->
+        <div class="profile-left-column">
+          
+          <!-- Big User Card -->
+          <div class="user-white-box profile-identity-card">
+            <div class="profile-avatar-large">MF</div>
+            <h2 class="profile-display-name">Muhammad Faeyza Zaki Debian</h2>
+            <div class="profile-phone-text">0851-8997-6960</div>
+            <div class="profile-vip-tag">
+              <i class="fa-solid fa-star"></i>
+              <span>Member Aktif</span>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="profile-stats-bar">
+              <div class="profile-stat-col">
+                <span class="profile-stat-number">2</span>
+                <span class="profile-stat-title">Kelas</span>
+              </div>
+              <div class="profile-stat-col">
+                <span class="profile-stat-number">0</span>
+                <span class="profile-stat-title">Referral</span>
+              </div>
+              <div class="profile-stat-col">
+                <span class="profile-stat-number">Rp 0</span>
+                <span class="profile-stat-title">Komisi</span>
+              </div>
+            </div>
+
+            <!-- Quick Action Links -->
+            <div class="profile-quick-nav">
+              <a href="user-riwayat.html" class="quick-nav-row">
+                <div class="quick-nav-icon icon-red-tint">
+                  <i class="fa-regular fa-file-lines"></i>
+                </div>
+                <div class="quick-nav-body">
+                  <h4 class="quick-nav-label">Riwayat Pembelian</h4>
+                  <span class="quick-nav-sub">2 kelas yang sudah dibeli</span>
+                </div>
+                <i class="fa-solid fa-chevron-right quick-nav-arrow"></i>
+              </a>
+
+              <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" class="quick-nav-row">
+                <div class="quick-nav-icon icon-green-tint">
+                  <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <div class="quick-nav-body">
+                  <h4 class="quick-nav-label">Bantuan &amp; FAQ</h4>
+                  <span class="quick-nav-sub">Hubungi kami via WhatsApp</span>
+                </div>
+                <i class="fa-solid fa-chevron-right quick-nav-arrow"></i>
+              </a>
+
+              <a href="#syarat" class="quick-nav-row">
+                <div class="quick-nav-icon icon-gray-tint">
+                  <i class="fa-regular fa-file-shield"></i>
+                </div>
+                <div class="quick-nav-body">
+                  <h4 class="quick-nav-label">Syarat &amp; Ketentuan</h4>
+                  <span class="quick-nav-sub">Kebijakan privasi &amp; affiliate</span>
+                </div>
+                <i class="fa-solid fa-chevron-right quick-nav-arrow"></i>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ================= KOLOM KANAN ================= -->
+        <div class="profile-right-column">
+          
+          <!-- Box 1: Data Diri -->
+          <section class="user-white-box profile-setting-card">
+            <div class="box-section-heading">
+              <i class="fa-regular fa-user text-coral"></i>
+              <h3 class="box-inner-title">Data Diri</h3>
+            </div>
+
+            <form class="profile-form-grid" id="form-profile-data">
+              <div class="form-row-2col">
+                <div class="form-group-field">
+                  <label>Nama Lengkap</label>
+                  <input type="text" class="user-input-base" value="Muhammad Faeyza Zaki Debian" name="name">
+                </div>
+                <div class="form-group-field">
+                  <label>Nomor WhatsApp</label>
+                  <input type="text" class="user-input-base is-locked" value="0851-8997-6960" name="phone" readonly>
+                  <small class="field-hint"><i class="fa-solid fa-lock"></i> Tidak bisa diubah (digunakan untuk login)</small>
+                </div>
+              </div>
+
+              <div class="form-group-field">
+                <label>Email (opsional)</label>
+                <input type="email" class="user-input-base" value="bianbelajar02@gmail.com" name="email">
+                <small class="field-hint">Untuk menerima ringkasan komisi bulanan</small>
+              </div>
+
+              <div class="form-buttons-row">
+                <button type="submit" class="btn-primary-coral">Simpan Perubahan</button>
+                <button type="reset" class="btn-secondary-white">Batal</button>
+              </div>
+            </form>
+          </section>
+
+          <!-- Box 2: Info Rekening (untuk Pencairan Affiliate) -->
+          <section class="user-white-box profile-setting-card">
+            <div class="box-section-heading">
+              <i class="fa-solid fa-building-columns text-coral"></i>
+              <h3 class="box-inner-title">Info Rekening (untuk Pencairan Affiliate)</h3>
+            </div>
+
+            <form class="profile-form-grid" id="form-profile-bank">
+              <div class="form-row-2col">
+                <div class="form-group-field">
+                  <label>Nama Bank</label>
+                  <input type="text" class="user-input-base" placeholder="Contoh: BCA, BNI, Mandiri, BRI" name="bank_name">
+                </div>
+                <div class="form-group-field">
+                  <label>Nomor Rekening</label>
+                  <input type="text" class="user-input-base" placeholder="Nomor rekening" name="bank_account">
+                </div>
+              </div>
+
+              <div class="form-group-field">
+                <label>Nama Pemilik Rekening</label>
+                <input type="text" class="user-input-base" placeholder="Sesuai buku tabungan" name="bank_holder">
+                <small class="field-hint">Pastikan nama sesuai dengan buku tabungan / kartu ATM</small>
+              </div>
+
+              <div class="form-buttons-row">
+                <button type="submit" class="btn-primary-coral">Simpan Rekening</button>
+                <button type="reset" class="btn-secondary-white">Batal</button>
+              </div>
+            </form>
+          </section>
+
+          <!-- Box 3: Password Login -->
+          <section class="user-white-box profile-setting-card">
+            <div class="box-section-heading">
+              <i class="fa-solid fa-key text-coral"></i>
+              <h3 class="box-inner-title">Password Login</h3>
+              <span class="tag-status-pill success-pill">Sudah diatur</span>
+            </div>
+
+            <div class="password-action-row">
+              <p class="password-note-text">Password sudah diatur. Kamu bisa login menggunakan email/WA + password.</p>
+              <button type="button" class="btn-secondary-white" id="btn-change-password">Ubah Password</button>
+            </div>
+          </section>
+
+          <!-- Box 4: Notifikasi -->
+          <section class="user-white-box profile-setting-card">
+            <div class="box-section-heading">
+              <i class="fa-regular fa-bell text-coral"></i>
+              <h3 class="box-inner-title">Notifikasi</h3>
+              <span class="tag-status-pill success-pill">Notifikasi Aktif</span>
+            </div>
+
+            <div class="notification-toggle-list">
+              
+              <div class="notification-toggle-row">
+                <div class="toggle-text-block">
+                  <h4 class="toggle-title">Resep Baru Terbuka</h4>
+                  <p class="toggle-desc">Notif saat resep baru terbuka sesuai jadwal drip</p>
+                </div>
+                <label class="custom-switch-toggle">
+                  <input type="checkbox" checked>
+                  <span class="switch-slider"></span>
+                </label>
+              </div>
+
+              <div class="notification-toggle-row">
+                <div class="toggle-text-block">
+                  <h4 class="toggle-title">Komisi Disetujui</h4>
+                  <p class="toggle-desc">Notif saat komisi afiliasi kamu disetujui admin</p>
+                </div>
+                <label class="custom-switch-toggle">
+                  <input type="checkbox" checked>
+                  <span class="switch-slider"></span>
+                </label>
+              </div>
+
+              <div class="notification-toggle-row">
+                <div class="toggle-text-block">
+                  <h4 class="toggle-title">Payout Berhasil</h4>
+                  <p class="toggle-desc">Notif saat pencairan komisi berhasil diproses</p>
+                </div>
+                <label class="custom-switch-toggle">
+                  <input type="checkbox" checked>
+                  <span class="switch-slider"></span>
+                </label>
+              </div>
+
+              <div class="notification-toggle-row">
+                <div class="toggle-text-block">
+                  <h4 class="toggle-title">Payout Ditolak</h4>
+                  <p class="toggle-desc">Notif saat permintaan pencairan ditolak</p>
+                </div>
+                <label class="custom-switch-toggle">
+                  <input type="checkbox" checked>
+                  <span class="switch-slider"></span>
+                </label>
+              </div>
+
+              <div class="notification-toggle-row">
+                <div class="toggle-text-block">
+                  <h4 class="toggle-title">Pertanyaan Dijawab</h4>
+                  <p class="toggle-desc">Notif saat Chef menjawab pertanyaanmu di diskusi kelas</p>
+                </div>
+                <label class="custom-switch-toggle">
+                  <input type="checkbox" checked>
+                  <span class="switch-slider"></span>
+                </label>
+              </div>
+
+              <div class="notification-toggle-row">
+                <div class="toggle-text-block">
+                  <h4 class="toggle-title">Challenge Direview</h4>
+                  <p class="toggle-desc">Notif saat foto tantangan kamu direview atau menang</p>
+                </div>
+                <label class="custom-switch-toggle">
+                  <input type="checkbox" checked>
+                  <span class="switch-slider"></span>
+                </label>
+              </div>
+
+              <div class="notification-toggle-row">
+                <div class="toggle-text-block">
+                  <h4 class="toggle-title">Pembelian Berhasil</h4>
+                  <p class="toggle-desc">Notif konfirmasi setelah kamu berhasil melakukan pembelian</p>
+                </div>
+                <label class="custom-switch-toggle">
+                  <input type="checkbox" checked>
+                  <span class="switch-slider"></span>
+                </label>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- Box 5: Keamanan Akun -->
+          <section class="user-white-box profile-setting-card">
+            <div class="box-section-heading">
+              <i class="fa-solid fa-shield-halved text-coral"></i>
+              <h3 class="box-inner-title">Keamanan Akun</h3>
+            </div>
+
+            <div class="security-device-card">
+              <div class="device-icon-wrap">
+                <i class="fa-solid fa-desktop"></i>
+              </div>
+              <div class="device-info-block">
+                <div class="device-name-row">
+                  <h4 class="device-title">Mozilla/5.0 (X11; Linux)</h4>
+                  <span class="tag-status-pill success-pill">Sesi ini</span>
+                </div>
+                <p class="device-meta">202.138.250.37 &nbsp;•&nbsp; Login 10 hari lalu</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Box 6: Keluar dari Akun -->
+          <section class="user-white-box profile-setting-card">
+            <div class="box-section-heading">
+              <i class="fa-solid fa-arrow-right-from-bracket text-coral"></i>
+              <h3 class="box-inner-title">Keluar dari Akun</h3>
+            </div>
+
+            <div>
+              <button type="button" class="btn-logout-all" id="btn-logout-all">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Keluar dari Semua Perangkat</span>
+              </button>
+            </div>
+          </section>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- Floating WhatsApp Action -->
+  <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" class="user-floating-wa" aria-label="Hubungi Kami di WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span>Hubungi Kami</span>
+  </a>
+
+  <!-- Toast Container -->
+  <div class="toast-notification" id="toast-notification">
+    <i class="fa-solid fa-circle-check toast-icon"></i>
+    <span id="toast-message"></span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="main.js"></script>
+</body>
+</html>

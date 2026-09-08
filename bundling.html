@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paket Bundling & Promo - Chef Kangsu</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER / NAVBAR ==================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo-link">
+        <img src="Asset/LogoBlack 1.png" alt="Chef Kangsu Logo" class="logo-img">
+        <div class="logo-text">
+          <span class="logo-name">Chef Kangsu</span>
+          <span class="logo-tagline">Halal Cooking Class</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="index.html#jalur" class="nav-link">Jalur Belajar</a></li>
+          <li class="nav-item"><a href="index.html#tentang" class="nav-link">Tentang</a></li>
+          <li class="nav-item"><a href="kelas.html" class="nav-link">Kelas</a></li>
+          <li class="nav-item"><a href="bundling.html" class="nav-link active">Bundling</a></li>
+        </ul>
+        <div class="mobile-nav-actions">
+          <a href="login.html" class="btn btn-outline-dark btn-pill">Login</a>
+          <a href="register.html" class="btn btn-primary btn-pill">Sign Up</a>
+        </div>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button class="icon-btn" aria-label="Cart"><i class="fa-solid fa-cart-shopping"></i></button>
+        <a href="login.html" class="btn btn-outline-dark btn-pill">Login</a>
+        <a href="register.html" class="btn btn-primary btn-pill">Sign Up</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== BUNDLING HERO SECTION ==================== -->
+    <section class="section-bundling-hero">
+      <div class="container relative-container text-center">
+        <!-- Leaf Decors -->
+        <img src="Asset/daundekor2.png" alt="" class="bundling-leaf leaf-left">
+        <img src="Asset/daundekor1.png" alt="" class="bundling-leaf leaf-right">
+
+        <div class="badge-tag-wrapper">
+          <div class="badge-tag badge-tag-coral">
+            <i class="fa-solid fa-gift"></i>
+            <span>Paket Hemat</span>
+          </div>
+        </div>
+
+        <h1 class="bundling-main-title">
+          Paket <span class="text-coral">Bundling</span> & Promo
+        </h1>
+        <p class="bundling-sub-title">
+          Rasakan pengalaman belajar memasak lebih lengkap dengan harga lebih hemat.<br class="hide-mobile">
+          Pilih paket favoritmu sekarang!
+        </p>
+
+        <!-- Control Bar: Tabs Switcher & Sort -->
+        <div class="bundling-control-bar">
+          <div class="bundling-tab-pills">
+            <button class="btn-tab-pill active" id="tab-btn-bundling" data-target="tab-bundling-content">
+              <i class="fa-solid fa-gift"></i> Paket Bundling
+            </button>
+            <button class="btn-tab-pill" id="tab-btn-promo" data-target="tab-promo-content">
+              <i class="fa-solid fa-tag"></i> Promo Special
+            </button>
+          </div>
+
+          <div class="bundling-sort-dropdown">
+            <select class="select-sort" id="sort-filter" aria-label="Urutkan Paket">
+              <option value="terbaru">Terbaru</option>
+              <option value="terlaris">Terpopuler</option>
+              <option value="termurah">Harga Terendah</option>
+              <option value="termahal">Harga Tertinggi</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 1: PAKET BUNDLING CONTENT ==================== -->
+    <section class="section section-bundling-cards tab-content active" id="tab-bundling-content">
+      <div class="container">
+        <div class="grid grid-3 grid-bundle-cards">
+          <!-- Bundle Card 1 (Nusantara Heritage Collection) -->
+          <div class="card-bundle">
+            <div class="bundle-banner-wrapper">
+              <img src="Asset/nusantaraheritage.png" alt="Nusantara Heritage Collection" class="bundle-banner-image">
+            </div>
+            <div class="bundle-card-body">
+              <h3 class="bundle-title">Nusantara Heritage Collection</h3>
+              <ul class="bundle-feature-list">
+                <li><i class="fa-solid fa-circle dot-bullet"></i> Kuliner bali ala kangsu</li>
+                <li><i class="fa-solid fa-circle dot-bullet"></i> Menu camilan jadul ala kangsu</li>
+                <li><i class="fa-solid fa-circle dot-bullet"></i> Camilan ala kangsu</li>
+                <li class="more-items">+8 Kelas lainnya</li>
+              </ul>
+              <div class="bundle-card-footer">
+                <div class="bundle-price-box">
+                  <span class="bundle-current-price">Rp 450.000</span>
+                  <span class="bundle-old-price">Rp 1.650.000</span>
+                </div>
+                <a href="kelas-detail.html" class="bundle-detail-link">Lihat detail <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB 2: PROMO SPECIAL CONTENT ==================== -->
+    <section class="section section-promo-cards tab-content" id="tab-promo-content">
+      <div class="container">
+        <div class="grid grid-4 grid-promo-items">
+          <!-- Promo Card 1 -->
+          <div class="card-promo-item">
+            <div class="promo-thumb">
+              <img src="Asset/ubipaket.png" alt="Aneka Olahan Ubi Ungu Viral">
+            </div>
+            <div class="promo-item-body">
+              <h3 class="promo-item-title">Aneka Olahan Ubi Ungu Viral</h3>
+              <span class="badge-tag-category tag-cat-dessert">Dessert</span>
+              <div class="promo-item-footer">
+                <div class="promo-price-info">
+                  <span class="promo-price-now">Rp 88.000</span>
+                  <span class="promo-price-before">Rp 150.000</span>
+                </div>
+                <div class="promo-actions">
+                  <a href="kelas-detail.html" class="btn btn-outline-dark btn-sm">Lihat Kelas <i class="fa-solid fa-arrow-right"></i></a>
+                  <button class="btn-cart-icon" aria-label="Tambah ke Keranjang"><i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Promo Card 2 -->
+          <div class="card-promo-item">
+            <div class="promo-thumb">
+              <img src="Asset/palembang.png" alt="Jajanan Palembang ala Kangsu">
+            </div>
+            <div class="promo-item-body">
+              <h3 class="promo-item-title">Jajanan Palembang ala Kangsu</h3>
+              <span class="badge-tag-category tag-cat-nusantara">Nusantara</span>
+              <div class="promo-item-footer">
+                <div class="promo-price-info">
+                  <span class="promo-price-now">Rp 45.000</span>
+                  <span class="promo-price-before">Rp 150.000</span>
+                </div>
+                <div class="promo-actions">
+                  <a href="kelas-detail.html" class="btn btn-outline-dark btn-sm">Lihat Kelas <i class="fa-solid fa-arrow-right"></i></a>
+                  <button class="btn-cart-icon" aria-label="Tambah ke Keranjang"><i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Promo Card 3 -->
+          <div class="card-promo-item">
+            <div class="promo-thumb">
+              <img src="Asset/kulinerbali.png" alt="Kuliner Bali khas Kangsu">
+            </div>
+            <div class="promo-item-body">
+              <h3 class="promo-item-title">Kuliner Bali khas Kangsu</h3>
+              <span class="badge-tag-category tag-cat-nusantara">Nusantara</span>
+              <div class="promo-item-footer">
+                <div class="promo-price-info">
+                  <span class="promo-price-now">Rp 45.000</span>
+                  <span class="promo-price-before">Rp 150.000</span>
+                </div>
+                <div class="promo-actions">
+                  <a href="kelas-detail.html" class="btn btn-outline-dark btn-sm">Lihat Kelas <i class="fa-solid fa-arrow-right"></i></a>
+                  <button class="btn-cart-icon" aria-label="Tambah ke Keranjang"><i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Promo Card 4 -->
+          <div class="card-promo-item">
+            <div class="promo-thumb">
+              <img src="Asset/hidangankuah.png" alt="Menu Hidangan Kuah ala Kangsu">
+            </div>
+            <div class="promo-item-body">
+              <h3 class="promo-item-title">Menu Hidangan Kuah ala Kangsu</h3>
+              <span class="badge-tag-category tag-cat-nusantara">Nusantara</span>
+              <div class="promo-item-footer">
+                <div class="promo-price-info">
+                  <span class="promo-price-now">Rp 45.000</span>
+                  <span class="promo-price-before">Rp 150.000</span>
+                </div>
+                <div class="promo-actions">
+                  <a href="kelas-detail.html" class="btn btn-outline-dark btn-sm">Lihat Kelas <i class="fa-solid fa-arrow-right"></i></a>
+                  <button class="btn-cart-icon" aria-label="Tambah ke Keranjang"><i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Promo Card 5 -->
+          <div class="card-promo-item">
+            <div class="promo-thumb">
+              <img src="Asset/camilanjadul.png" alt="Camilan Jadul ala Kangsu">
+            </div>
+            <div class="promo-item-body">
+              <h3 class="promo-item-title">Camilan Jadul ala Kangsu</h3>
+              <span class="badge-tag-category tag-cat-nusantara">Nusantara</span>
+              <div class="promo-item-footer">
+                <div class="promo-price-info">
+                  <span class="promo-price-now">Rp 45.000</span>
+                  <span class="promo-price-before">Rp 150.000</span>
+                </div>
+                <div class="promo-actions">
+                  <a href="kelas-detail.html" class="btn btn-outline-dark btn-sm">Lihat Kelas <i class="fa-solid fa-arrow-right"></i></a>
+                  <button class="btn-cart-icon" aria-label="Tambah ke Keranjang"><i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Promo Card 6 -->
+          <div class="card-promo-item">
+            <div class="promo-thumb">
+              <img src="Asset/bebekcrispy.png" alt="Bebek Crispy Sambal Ireng ala Kangsu">
+            </div>
+            <div class="promo-item-body">
+              <h3 class="promo-item-title">Bebek Crispy Sambal Ireng ala Kangsu</h3>
+              <span class="badge-tag-category tag-cat-nusantara">Nusantara</span>
+              <div class="promo-item-footer">
+                <div class="promo-price-info">
+                  <span class="promo-price-now">Rp 45.000</span>
+                  <span class="promo-price-before">Rp 150.000</span>
+                </div>
+                <div class="promo-actions">
+                  <a href="kelas-detail.html" class="btn btn-outline-dark btn-sm">Lihat Kelas <i class="fa-solid fa-arrow-right"></i></a>
+                  <button class="btn-cart-icon" aria-label="Tambah ke Keranjang"><i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Promo Card 7 -->
+          <div class="card-promo-item">
+            <div class="promo-thumb">
+              <img src="Asset/rujaknusantara.png" alt="Aneka Rujak Nusantara">
+            </div>
+            <div class="promo-item-body">
+              <h3 class="promo-item-title">Aneka Rujak Nusantara</h3>
+              <span class="badge-tag-category tag-cat-nusantara">Nusantara</span>
+              <div class="promo-item-footer">
+                <div class="promo-price-info">
+                  <span class="promo-price-now">Rp 45.000</span>
+                  <span class="promo-price-before">Rp 150.000</span>
+                </div>
+                <div class="promo-actions">
+                  <a href="kelas-detail.html" class="btn btn-outline-dark btn-sm">Lihat Kelas <i class="fa-solid fa-arrow-right"></i></a>
+                  <button class="btn-cart-icon" aria-label="Tambah ke Keranjang"><i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Promo Card 8 -->
+          <div class="card-promo-item">
+            <div class="promo-thumb">
+              <img src="Asset/menurumahanmerdeka.png" alt="Menu Rumahan Merdeka ala Kangsu">
+            </div>
+            <div class="promo-item-body">
+              <h3 class="promo-item-title">Menu Rumahan Merdeka ala Kangsu</h3>
+              <span class="badge-tag-category tag-cat-nusantara">Nusantara</span>
+              <div class="promo-item-footer">
+                <div class="promo-price-info">
+                  <span class="promo-price-now">Rp 45.000</span>
+                  <span class="promo-price-before">Rp 150.000</span>
+                </div>
+                <div class="promo-actions">
+                  <a href="kelas-detail.html" class="btn btn-outline-dark btn-sm">Lihat Kelas <i class="fa-solid fa-arrow-right"></i></a>
+                  <button class="btn-cart-icon" aria-label="Tambah ke Keranjang"><i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== BANNER CTA BOTTOM ==================== -->
+    <section class="section section-cta-bottom">
+      <div class="container">
+        <div class="cta-card">
+          <div class="cta-content">
+            <h2 class="cta-title">Siap Memulai Perjalanan Masakmu?</h2>
+            <p class="cta-desc">Temukan kelas yang tepat dan capai tujuan masakmu bersama Chef Kangsu.</p>
+            <a href="kelas.html" class="btn btn-white btn-pill">Temukan Kelasmu</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <!-- Col 1: Brand Info -->
+      <div class="footer-col brand-col">
+        <a href="index.html" class="footer-logo-link">
+          <img src="Asset/logowhite.png" alt="Chef Kangsu Halal Cooking Class" class="footer-logo">
+          <div class="footer-logo-text">
+            <span class="footer-logo-name">Chef Kangsu</span>
+            <span class="footer-logo-tagline">Halal Cooking Class</span>
+          </div>
+        </a>
+        <p class="footer-brand-desc">
+          Platform belajar masak online halal bersama Chef Kangsu. Praktis, jelas, dan bisa dipraktikkan di rumah.
+        </p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+        <p class="copyright">&copy; 2026 Chef Kangsu, All right reserved</p>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="kelas.html">Kelas</a></li>
+          <li><a href="index.html#jalur">Jalur Belajar</a></li>
+          <li><a href="index.html#tentang">Tentang</a></li>
+          <li><a href="bundling.html">Bundling</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Jalur Belajar -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Jalur Belajar</h4>
+        <ul class="footer-menu">
+          <li><a href="index.html#jalur">Mulai dari Nol</a></li>
+          <li><a href="index.html#jalur">Sudah bisa Masak</a></li>
+          <li><a href="index.html#jalur">Siap Naik Level</a></li>
+          <li><a href="index.html#quiz">Rekomendasi Quiz</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Bantuan -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Bantuan</h4>
+        <ul class="footer-menu">
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#panduan">Panduan Belajar</a></li>
+          <li><a href="#privasi">Kebijakan Privasi</a></li>
+          <li><a href="#syarat">Syarat & Ketentuan</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 5: Kontak Kami -->
+      <div class="footer-col contact-col">
+        <h4 class="footer-heading">Kontak Kami</h4>
+        <ul class="footer-contact-list">
+          <li>
+            <i class="fa-regular fa-envelope"></i>
+            <span>admin@email.com</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone"></i>
+            <span>0813-1381-3337</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Komplek Taman Firdaus, Blk. E No.129, Pakuhaji, Kec. Ngamprah, Kabupaten Bandung Barat, Jawa Barat 40552</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== FLOATING WHATSAPP CTA ==================== -->
+  <a href="https://wa.me/6281313813337?text=Halo%20Chef%20Kangsu,%20saya%20tertarik%20dengan%20paket%20bundling%20dan%20promo" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="Hubungi Kami di WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="whatsapp-tooltip">Tanya Seputar Paket</span>
+  </a>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riwayat Pembelian - Chef Kangsu</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="user-panel-body">
+
+  <div class="user-layout-container">
+    
+    <!-- ==================== SIDEBAR ==================== -->
+    <aside class="user-sidebar" id="user-sidebar">
+      
+      <div class="user-sidebar-top">
+        <a href="index.html" class="user-sidebar-brand">
+          <img src="Asset/LogoBlack 1.png" alt="Chef Kangsu Logo" class="brand-logo-img">
+          <div class="brand-text-block">
+            <span class="brand-title">Chef Kangsu</span>
+            <span class="brand-subtitle">Halal Cooking Class</span>
+          </div>
+        </a>
+        <button class="user-bell-btn" aria-label="Notifikasi">
+          <i class="fa-regular fa-bell"></i>
+        </button>
+      </div>
+
+      <a href="user-profile.html" class="user-mini-profile">
+        <div class="user-avatar-circle">MF</div>
+        <div class="user-meta-info">
+          <h4 class="user-name-label">Muhammad F.</h4>
+          <span class="user-status-tag">
+            <span class="status-dot-active"></span> Member Aktif
+          </span>
+        </div>
+      </a>
+
+      <nav class="user-nav-menu">
+        <ul class="user-nav-list">
+          <li class="user-nav-item">
+            <a href="user-dashboard.html" class="user-nav-link">
+              <i class="fa-solid fa-house"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="user-nav-item">
+            <a href="user-kelas.html" class="user-nav-link">
+              <i class="fa-solid fa-book-open"></i>
+              <span>Kelas Saya</span>
+            </a>
+          </li>
+          <li class="user-nav-item">
+            <a href="user-wishlist.html" class="user-nav-link">
+              <i class="fa-regular fa-heart"></i>
+              <span>Wishlist</span>
+            </a>
+          </li>
+          <li class="user-nav-item">
+            <a href="user-riwayat.html" class="user-nav-link active">
+              <i class="fa-regular fa-file-lines"></i>
+              <span>Riwayat</span>
+            </a>
+          </li>
+          <li class="user-nav-item">
+            <a href="user-affiliate.html" class="user-nav-link">
+              <i class="fa-solid fa-users"></i>
+              <span>Affiliate</span>
+            </a>
+          </li>
+          <li class="user-nav-item">
+            <a href="user-profile.html" class="user-nav-link">
+              <i class="fa-regular fa-user"></i>
+              <span>Profil</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="user-sidebar-bottom">
+        <a href="index.html" class="user-bottom-link">
+          <i class="fa-solid fa-house-chimney"></i>
+          <span>Ke Homepage</span>
+        </a>
+        <button type="button" class="user-bottom-link btn-logout" id="btn-user-logout">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <span>Keluar</span>
+        </button>
+      </div>
+
+    </aside>
+
+    <!-- Mobile Header Bar -->
+    <header class="user-mobile-topbar">
+      <button class="user-mobile-hamburger" id="user-mobile-toggle" aria-label="Buka Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <a href="index.html" class="user-sidebar-brand">
+        <img src="Asset/LogoBlack 1.png" alt="Chef Kangsu Logo" class="brand-logo-img">
+        <span class="brand-title">Chef Kangsu</span>
+      </a>
+      <a href="user-profile.html" class="user-avatar-circle mini">MF</a>
+    </header>
+
+    <!-- ==================== MAIN CONTENT AREA ==================== -->
+    <main class="user-main-content">
+      
+      <div class="user-content-header with-icon-row">
+        <div class="header-icon-orange">
+          <i class="fa-regular fa-file-lines"></i>
+        </div>
+        <div>
+          <h1 class="user-greeting-title">Riwayat Pembelian</h1>
+          <p class="user-greeting-sub">Semua kelas dan paket yang sudah kamu beli</p>
+        </div>
+      </div>
+
+      <!-- Transaction History List -->
+      <div class="user-invoice-list">
+        
+        <!-- Transaction Item 1 -->
+        <div class="invoice-card-box">
+          <div class="invoice-top-row">
+            <div class="invoice-thumb-img">
+              <img src="Asset/kelas/snackafteried.png" alt="Snack After Ied" onerror="this.src='Asset/nasi.png'">
+            </div>
+            <div class="invoice-info-body">
+              <h3 class="invoice-item-title">Snack After Ied</h3>
+              <div class="invoice-price">Rp 0</div>
+              <div class="invoice-date">18 Agu 2026</div>
+            </div>
+            <div class="invoice-status-badge">
+              <span class="badge-paid">Lunas</span>
+            </div>
+          </div>
+          <div class="invoice-bottom-action">
+            <a href="user-kelas.html" class="invoice-open-link">
+              <span>Buka Kelas</span>
+              <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Transaction Item 2 -->
+        <div class="invoice-card-box">
+          <div class="invoice-top-row">
+            <div class="invoice-thumb-img">
+              <img src="Asset/kelas/japanstreetpt3.png" alt="Turkiye Menu ala Kangsu" onerror="this.src='Asset/bebekcrispy.png'">
+            </div>
+            <div class="invoice-info-body">
+              <h3 class="invoice-item-title">Turkiye Menu ala Kangsu</h3>
+              <div class="invoice-price">Rp 0</div>
+              <div class="invoice-date">18 Agu 2026</div>
+            </div>
+            <div class="invoice-status-badge">
+              <span class="badge-paid">Lunas</span>
+            </div>
+          </div>
+          <div class="invoice-bottom-action">
+            <a href="user-kelas.html" class="invoice-open-link">
+              <span>Buka Kelas</span>
+              <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- Floating WhatsApp Action -->
+  <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" class="user-floating-wa" aria-label="Hubungi Kami di WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span>Hubungi Kami</span>
+  </a>
+
+  <!-- Toast Container -->
+  <div class="toast-notification" id="toast-notification">
+    <i class="fa-solid fa-circle-check toast-icon"></i>
+    <span id="toast-message"></span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masuk ke Akun - Chef Kangsu</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page login-page">
+
+  <!-- ==================== MINIMAL AUTH HEADER ==================== -->
+  <header class="auth-minimal-header">
+    <div class="auth-header-container">
+      <a href="index.html" class="auth-logo-link">
+        <img src="Asset/LogoBlack 1.png" alt="Chef Kangsu Logo" class="auth-logo-img">
+        <div class="auth-logo-text">
+          <span class="auth-logo-name">Chef Kangsu</span>
+          <span class="auth-logo-tagline">Halal Cooking Class</span>
+        </div>
+      </a>
+      <a href="index.html" class="auth-back-link">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Kembali ke Beranda</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN AUTH CONTENT ==================== -->
+  <main class="auth-main-wrapper">
+    <div class="auth-card-container">
+      
+      <!-- SISI KIRI: Brand Story & Testimoni -->
+      <aside class="auth-showcase-panel">
+        <div class="auth-showcase-bg-decor">
+          <img src="Asset/daundekor1.png" alt="" class="auth-decor-leaf auth-decor-leaf-1">
+          <img src="Asset/daundekor2.png" alt="" class="auth-decor-leaf auth-decor-leaf-2">
+        </div>
+
+        <div class="auth-showcase-content">
+          <!-- Top Badge -->
+          <div class="auth-badge-pill">
+            <i class="fa-solid fa-certificate"></i>
+            <span>100% Halal Verified Cooking Class</span>
+          </div>
+
+          <h1 class="auth-showcase-title">
+            Lanjutkan Perjalanan <br>
+            <span class="text-highlight">Masak Lezatmu</span>
+          </h1>
+
+          <p class="auth-showcase-desc">
+            Akses kembali puluhan video resep praktis, tips anti-gagal, dan panduan usaha kuliner halal bersama Chef Kangsu.
+          </p>
+
+          <!-- Floating Glassmorphism Testimonial -->
+          <div class="auth-floating-testimonial">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">
+                <i class="fa-solid fa-user-check"></i>
+              </div>
+              <div class="testimonial-info">
+                <h4 class="testimonial-name">Siti Rahmawati</h4>
+                <p class="testimonial-role">Alumni Kelas Menu Rumahan &amp; Usaha</p>
+              </div>
+              <div class="testimonial-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+            <p class="testimonial-quote">
+              "Penjelasan Chef Kangsu detail banget sampai takaran gram terkecil. Sekarang jualan siomay &amp; bebek krispi di rumah selalu banjir pesanan!"
+            </p>
+          </div>
+
+          <!-- Feature Highlights Checklist -->
+          <div class="auth-showcase-features">
+            <div class="feature-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Akses Video Seumur Hidup</span>
+            </div>
+            <div class="feature-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Konsultasi Komunitas Eksklusif</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- SISI KANAN: Formulir Login -->
+      <section class="auth-form-card" aria-labelledby="login-form-title">
+        
+        <!-- Tab Switcher (Masuk / Daftar) -->
+        <div class="auth-tab-switcher">
+          <a href="login.html" class="auth-tab-btn active">Masuk</a>
+          <a href="register.html" class="auth-tab-btn">Daftar Akun</a>
+        </div>
+
+        <div class="auth-form-header">
+          <h2 id="login-form-title">Selamat Datang Kembali 👋</h2>
+          <p>Masukkan akun Anda untuk melanjutkan belajar memasak.</p>
+        </div>
+
+        <!-- Google SSO Button -->
+        <button type="button" class="btn-google-auth google-register-btn">
+          <svg class="google-icon" viewBox="0 0 24 24" width="20" height="20">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+          </svg>
+          <span>Masuk dengan Google</span>
+        </button>
+
+        <!-- Divider -->
+        <div class="auth-form-divider">
+          <span>atau masuk dengan email</span>
+        </div>
+
+        <!-- Form Elements -->
+        <form class="auth-actual-form" id="login-form" novalidate>
+          
+          <!-- Field: Email / Username -->
+          <div class="form-group-field">
+            <label for="login-email">Email atau Username</label>
+            <div class="input-wrapper-modern">
+              <i class="fa-regular fa-user input-leading-icon"></i>
+              <input 
+                type="text" 
+                id="login-email" 
+                name="email" 
+                placeholder="admin atau nama@email.com" 
+                autocomplete="username" 
+                required
+              >
+            </div>
+          </div>
+
+          <!-- Field: Password -->
+          <div class="form-group-field">
+            <div class="field-label-row">
+              <label for="login-password">Password</label>
+              <a href="#forgot" class="forgot-pass-link" id="forgot-password-link">Lupa password?</a>
+            </div>
+            <div class="input-wrapper-modern">
+              <i class="fa-solid fa-lock input-leading-icon"></i>
+              <input 
+                type="password" 
+                id="login-password" 
+                name="password" 
+                placeholder="Masukkan password Anda" 
+                autocomplete="current-password" 
+                required
+              >
+              <button type="button" class="password-toggle-btn" aria-label="Tampilkan password">
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Remember Me Checkbox -->
+          <div class="auth-options-row">
+            <label class="custom-checkbox-wrap">
+              <input type="checkbox" name="remember" id="remember-me">
+              <span class="custom-checkbox-box"></span>
+              <span class="custom-checkbox-text">Ingat saya di perangkat ini</span>
+            </label>
+          </div>
+
+          <!-- Error Alert Container -->
+          <div class="auth-alert-message" id="login-error" role="alert" style="display: none;"></div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn-auth-submit" id="login-submit-btn">
+            <span class="btn-text">Masuk ke Kelas</span>
+            <i class="fa-solid fa-arrow-right btn-icon"></i>
+          </button>
+        </form>
+
+        <!-- Form Footer Link -->
+        <div class="auth-card-footer">
+          <p>Belum punya akun? <a href="register.html" class="highlight-link">Daftar Sekarang</a></p>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-notification" id="toast-notification">
+    <i class="fa-solid fa-circle-check toast-icon"></i>
+    <span id="toast-message"></span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="main.js"></script>
+</body>
+</html>

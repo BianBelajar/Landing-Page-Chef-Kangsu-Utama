@@ -6,30 +6,41 @@ document.addEventListener('DOMContentLoaded', () => {
   // 1. STICKY NAVBAR & ACTIVE SCROLL SPY
   const navbar = document.getElementById('navbar');
   const navLinks = document.querySelectorAll('.nav-link');
-  const sections = document.querySelectorAll('section[id]');
+  const isHomePage = document.querySelector('.hero') !== null;
+  const sections = isHomePage ? document.querySelectorAll('section[id]') : [];
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 30) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
+    if (navbar) {
+      if (window.scrollY > 30) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
     }
 
-    let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
-      const sectionHeight = section.offsetHeight;
-      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-        current = section.getAttribute('id');
-      }
-    });
+    if (isHomePage && sections.length > 0) {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.offsetHeight;
+        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+          current = section.getAttribute('id');
+        }
+      });
 
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
+      if (current) {
+        navLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href === `index.html#${current}` || href === `#${current}`) {
+            navLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+          } else if (current === 'home' && (href === 'index.html' || href === '#home')) {
+            navLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+          }
+        });
       }
-    });
+    }
   });
 
   // 2. MOBILE HAMBURGER MENU TOGGLE
@@ -386,7 +397,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
 
   // 7. SCROLL REVEAL ANIMATION (LIGHTWEIGHT OBSERVER)
-  const revealElements = document.querySelectorAll('.card, .hero-content, .hero-stats, .level-flow, .pillars-card');
+  const revealElements = document.querySelectorAll('.card, .hero-content, .hero-stats, .level-flow, .pillars-card, .card-bundle, .card-promo-item, .card-catalog-item');
   revealElements.forEach(el => el.classList.add('reveal-item'));
 
   if ('IntersectionObserver' in window) {
@@ -403,4 +414,555 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     revealElements.forEach(el => el.classList.add('revealed'));
   }
+
+  // 8. BUNDLING & PROMO TAB SWITCHER (bundling.html)
+  const tabPillButtons = document.querySelectorAll('.btn-tab-pill');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabPillButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabPillButtons.forEach(b => b.classList.remove('active'));
+      tabContents.forEach(content => content.classList.remove('active'));
+
+      btn.classList.add('active');
+      const targetId = btn.getAttribute('data-target');
+      const targetContent = document.getElementById(targetId);
+      if (targetContent) {
+        targetContent.classList.add('active');
+      }
+    });
+  });
+
+  // 9. KELAS CATALOG LIVE SEARCH & CATEGORY FILTER (kelas.html)
+  const searchInput = document.getElementById('catalog-search-input');
+  const clearSearchBtn = document.getElementById('clear-search-btn');
+  const categoryPills = document.querySelectorAll('.pill-category-btn');
+  const catalogCards = document.querySelectorAll('.card-catalog-item');
+  const resultsCount = document.getElementById('results-count');
+  const noResultsBox = document.getElementById('no-results-box');
+  const resetFilterBtn = document.getElementById('reset-filter-btn');
+
+  if (catalogCards.length > 0) {
+    let currentCategory = 'all';
+    let currentSearchTerm = '';
+
+    function filterCatalog() {
+      let visibleCount = 0;
+      catalogCards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category') || '';
+        const cardTitle = (card.getAttribute('data-title') || '').toLowerCase();
+
+        const matchesCat = (currentCategory === 'all') || cardCategory.includes(currentCategory);
+        const matchesSearch = !currentSearchTerm || cardTitle.includes(currentSearchTerm.toLowerCase());
+
+        if (matchesCat && matchesSearch) {
+          card.style.display = 'flex';
+          card.style.animation = 'fadeIn 0.35s ease';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (resultsCount) {
+        resultsCount.innerHTML = `Menampilkan <strong>${visibleCount}</strong> kelas`;
+      }
+
+      if (noResultsBox) {
+        noResultsBox.style.display = (visibleCount === 0) ? 'block' : 'none';
+      }
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        currentSearchTerm = e.target.value.trim();
+        if (clearSearchBtn) {
+          clearSearchBtn.style.display = currentSearchTerm ? 'block' : 'none';
+        }
+        filterCatalog();
+      });
+    }
+
+    if (clearSearchBtn) {
+      clearSearchBtn.addEventListener('click', () => {
+        if (searchInput) {
+          searchInput.value = '';
+          currentSearchTerm = '';
+          clearSearchBtn.style.display = 'none';
+          searchInput.focus();
+          filterCatalog();
+        }
+      });
+    }
+
+    categoryPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        categoryPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        currentCategory = pill.getAttribute('data-filter') || 'all';
+        filterCatalog();
+      });
+    });
+
+    if (resetFilterBtn) {
+      resetFilterBtn.addEventListener('click', () => {
+        if (searchInput) searchInput.value = '';
+        currentSearchTerm = '';
+        if (clearSearchBtn) clearSearchBtn.style.display = 'none';
+        categoryPills.forEach(p => p.classList.remove('active'));
+        const allPill = document.querySelector('.pill-category-btn[data-filter="all"]');
+        if (allPill) allPill.classList.add('active');
+        currentCategory = 'all';
+        filterCatalog();
+      });
+    }
+  }
+
+  // 10. LIVE COUNTDOWN TIMER (kelas-detail.html)
+  const timerHours = document.getElementById('timer-hours');
+  const timerMinutes = document.getElementById('timer-minutes');
+  const timerSeconds = document.getElementById('timer-seconds');
+
+  if (timerHours && timerMinutes && timerSeconds) {
+    let totalSeconds = (12 * 3600) + (59 * 60) + 10;
+
+    function updateCountdown() {
+      if (totalSeconds <= 0) {
+        totalSeconds = 24 * 3600; // loop
+      }
+      totalSeconds--;
+
+      const hrs = Math.floor(totalSeconds / 3600);
+      const mins = Math.floor((totalSeconds % 3600) / 60);
+      const secs = totalSeconds % 60;
+
+      timerHours.textContent = hrs < 10 ? '0' + hrs : hrs;
+      timerMinutes.textContent = mins < 10 ? '0' + mins : mins;
+      timerSeconds.textContent = secs < 10 ? '0' + secs : secs;
+    }
+
+    setInterval(updateCountdown, 1000);
+  }
+
+  // 11. TOAST NOTIFICATION (Tambah ke Keranjang & Wishlist)
+  const toast = document.getElementById('toast-notification');
+  const toastMessage = document.getElementById('toast-message');
+  const addCartButtons = document.querySelectorAll('.btn-add-cart, .btn-cart-icon');
+
+  function showToast(msg) {
+    if (!toast) return;
+    if (toastMessage) toastMessage.textContent = msg;
+    toast.classList.add('active');
+    setTimeout(() => {
+      toast.classList.remove('active');
+    }, 3200);
+  }
+
+  addCartButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      showToast('Kelas berhasil ditambahkan ke keranjang!');
+    });
+  });
+
+  // 12. AUTHENTICATION PAGES (Login & Register Interactivity)
+  const registerForm = document.getElementById('register-form');
+  const registerError = document.getElementById('register-error');
+  const loginForm = document.getElementById('login-form');
+  const loginError = document.getElementById('login-error');
+  const passwordToggles = document.querySelectorAll('.password-toggle, .password-toggle-btn');
+  const googleRegisterBtns = document.querySelectorAll('.google-register-btn, .btn-google-auth');
+
+  // Password Visibility Toggle
+  passwordToggles.forEach(toggleBtn => {
+    toggleBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const parentWrap = toggleBtn.closest('.input-wrapper-modern, .auth-input-wrap');
+      const passwordInput = parentWrap ? parentWrap.querySelector('input[type="password"], input[type="text"]') : null;
+      if (!passwordInput) return;
+
+      const isHidden = passwordInput.type === 'password';
+      passwordInput.type = isHidden ? 'text' : 'password';
+      
+      const icon = toggleBtn.querySelector('i');
+      if (icon) {
+        icon.classList.toggle('fa-eye', !isHidden);
+        icon.classList.toggle('fa-eye-slash', isHidden);
+      }
+      toggleBtn.setAttribute('aria-label', isHidden ? 'Sembunyikan password' : 'Tampilkan password');
+    });
+  });
+
+  // Password Strength Meter (Register Page)
+  const registerPasswordInput = document.getElementById('register-password');
+  const meterBarFill = document.getElementById('meter-bar-fill');
+  const meterStrengthLabel = document.getElementById('meter-strength-label');
+  const critLength = document.getElementById('crit-length');
+  const critLetter = document.getElementById('crit-letter');
+
+  if (registerPasswordInput && meterBarFill && meterStrengthLabel) {
+    registerPasswordInput.addEventListener('input', () => {
+      const val = registerPasswordInput.value;
+      
+      if (!val) {
+        meterBarFill.className = 'meter-bar-fill';
+        meterStrengthLabel.className = '';
+        meterStrengthLabel.textContent = 'Belum diisi';
+        if (critLength) critLength.classList.remove('valid');
+        if (critLetter) critLetter.classList.remove('valid');
+        return;
+      }
+
+      const hasMinLength = val.length >= 8;
+      const hasLetterAndNumber = /[a-zA-Z]/.test(val) && /[0-9]/.test(val);
+      const hasSpecial = /[^a-zA-Z0-9]/.test(val);
+
+      if (critLength) critLength.classList.toggle('valid', hasMinLength);
+      if (critLetter) critLetter.classList.toggle('valid', hasLetterAndNumber);
+
+      let score = 0;
+      if (val.length >= 6) score++;
+      if (hasMinLength) score++;
+      if (hasLetterAndNumber) score++;
+      if (hasSpecial || val.length >= 12) score++;
+
+      if (score <= 2) {
+        meterBarFill.className = 'meter-bar-fill weak';
+        meterStrengthLabel.className = 'weak';
+        meterStrengthLabel.textContent = 'Lemah';
+      } else if (score === 3) {
+        meterBarFill.className = 'meter-bar-fill medium';
+        meterStrengthLabel.className = 'medium';
+        meterStrengthLabel.textContent = 'Cukup Kuat';
+      } else {
+        meterBarFill.className = 'meter-bar-fill strong';
+        meterStrengthLabel.className = 'strong';
+        meterStrengthLabel.textContent = 'Sangat Kuat & Aman';
+      }
+    });
+  }
+
+  // Google SSO Click Simulation
+  googleRegisterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      showToast('Integrasi Google SSO sedang dalam mode demo.');
+    });
+  });
+
+  // Forgot password link click
+  const forgotPassLink = document.getElementById('forgot-password-link');
+  if (forgotPassLink) {
+    forgotPassLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      showToast('Tautan reset password telah disimulasikan ke email terdaftar.');
+    });
+  }
+
+  // Register Form Submission
+  if (registerForm) {
+    registerForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const submitBtn = document.getElementById('register-submit-btn') || registerForm.querySelector('button[type="submit"]');
+      const formData = new FormData(registerForm);
+      const name = String(formData.get('name') || '').trim();
+      const phone = String(formData.get('phone') || '').trim();
+      const email = String(formData.get('email') || '').trim();
+      const password = String(formData.get('password') || '');
+
+      if (!name || !phone || !email || password.length < 8) {
+        if (registerError) {
+          registerError.textContent = 'Mohon lengkapi semua kolom dan gunakan password minimal 8 karakter.';
+          registerError.style.display = 'block';
+        }
+        return;
+      }
+
+      if (registerError) {
+        registerError.textContent = '';
+        registerError.style.display = 'none';
+      }
+
+      // Button Loading state
+      if (submitBtn) submitBtn.classList.add('is-loading');
+
+      setTimeout(() => {
+        if (submitBtn) submitBtn.classList.remove('is-loading');
+        showToast(`Selamat bergabung, ${name}! Akunmu berhasil didaftarkan.`);
+        registerForm.reset();
+        if (meterBarFill) meterBarFill.className = 'meter-bar-fill';
+        if (meterStrengthLabel) {
+          meterStrengthLabel.className = '';
+          meterStrengthLabel.textContent = 'Belum diisi';
+        }
+        if (critLength) critLength.classList.remove('valid');
+        if (critLetter) critLetter.classList.remove('valid');
+      }, 900);
+    });
+  }
+
+  // Login Form Submission (Hardcoded: admin / admin123)
+  if (loginForm) {
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const submitBtn = document.getElementById('login-submit-btn') || loginForm.querySelector('button[type="submit"]');
+      const formData = new FormData(loginForm);
+      const email = String(formData.get('email') || '').trim().toLowerCase();
+      const password = String(formData.get('password') || '');
+
+      if (!email || !password) {
+        if (loginError) {
+          loginError.textContent = 'Mohon masukkan email atau username beserta password.';
+          loginError.style.display = 'block';
+        }
+        return;
+      }
+
+      // Button Loading state
+      if (submitBtn) submitBtn.classList.add('is-loading');
+      if (loginError) {
+        loginError.textContent = '';
+        loginError.style.display = 'none';
+      }
+
+      setTimeout(() => {
+        if (submitBtn) submitBtn.classList.remove('is-loading');
+
+        // Validasi Hardcode Kredensial
+        const isValidUser = (email === 'admin' || email === 'admin@chefkangsu.com');
+        const isValidPass = (password === 'admin123');
+
+        if (isValidUser && isValidPass) {
+          // Simpan session simulasi
+          localStorage.setItem('chef_auth_user', JSON.stringify({
+            username: 'admin',
+            name: 'Muhammad F.',
+            initials: 'MF',
+            role: 'admin',
+            isLoggedIn: true,
+            loginTime: new Date().toISOString()
+          }));
+
+          showToast('Login berhasil! Mengalihkan ke dashboard member...');
+          loginForm.reset();
+
+          // Redirect ke dashboard setelah 1 detik
+          setTimeout(() => {
+            window.location.href = 'user-dashboard.html';
+          }, 900);
+        } else {
+          if (loginError) {
+            loginError.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> Akun atau password salah! <br><small>Gunakan Akun: <b>admin</b> &nbsp;|&nbsp; Password: <b>admin123</b></small>';
+            loginError.style.display = 'block';
+          }
+        }
+      }, 600);
+    });
+  }
+
+  // 13. NAVBAR AUTH STATE SYNC (Landing Page & Catalogues)
+  function syncNavbarAuthState() {
+    const savedUserJson = localStorage.getItem('chef_auth_user');
+    if (!savedUserJson) return;
+
+    try {
+      const user = JSON.parse(savedUserJson);
+      if (!user || !user.isLoggedIn) return;
+
+      const userName = user.name || 'Muhammad F.';
+      const initials = user.initials || 'MF';
+
+      // Desktop Navbar Action Replacement
+      const navActions = document.querySelector('.nav-actions');
+      if (navActions) {
+        const loginBtn = navActions.querySelector('a[href="login.html"]');
+        const signupBtn = navActions.querySelector('a[href="register.html"]');
+
+        if (loginBtn) loginBtn.remove();
+        if (signupBtn) signupBtn.remove();
+
+        // Check if widget already exists
+        if (!navActions.querySelector('.nav-user-dropdown-wrap')) {
+          const userWidget = document.createElement('div');
+          userWidget.className = 'nav-user-dropdown-wrap';
+          userWidget.innerHTML = `
+            <a href="user-dashboard.html" class="nav-auth-user-badge">
+              <div class="nav-user-avatar-circle">${initials}</div>
+              <span class="nav-user-name-text">${userName}</span>
+              <i class="fa-solid fa-chevron-down nav-user-dropdown-arrow"></i>
+            </a>
+            <div class="nav-user-menu-box">
+              <a href="user-dashboard.html" class="nav-menu-item-link"><i class="fa-solid fa-house"></i> Dashboard</a>
+              <a href="user-kelas.html" class="nav-menu-item-link"><i class="fa-solid fa-book-open"></i> Kelas Saya</a>
+              <a href="user-profile.html" class="nav-menu-item-link"><i class="fa-regular fa-user"></i> Profil Saya</a>
+              <div class="nav-menu-divider"></div>
+              <button type="button" class="nav-menu-item-link menu-logout btn-global-logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Keluar</button>
+            </div>
+          `;
+
+          const hamburger = navActions.querySelector('.hamburger');
+          if (hamburger) {
+            navActions.insertBefore(userWidget, hamburger);
+          } else {
+            navActions.appendChild(userWidget);
+          }
+
+          userWidget.querySelector('.nav-auth-user-badge').addEventListener('click', (e) => {
+            e.preventDefault();
+            const menuBox = userWidget.querySelector('.nav-user-menu-box');
+            if (menuBox) {
+              menuBox.classList.toggle('is-open');
+            }
+          });
+
+          document.addEventListener('click', (e) => {
+            if (!userWidget.contains(e.target)) {
+              const menuBox = userWidget.querySelector('.nav-user-menu-box');
+              if (menuBox) menuBox.classList.remove('is-open');
+            }
+          });
+        }
+      }
+
+      // Mobile Nav Actions Replacement
+      const mobileNavActions = document.querySelector('.mobile-nav-actions');
+      if (mobileNavActions) {
+        mobileNavActions.innerHTML = `
+          <a href="user-dashboard.html" class="btn btn-outline-dark btn-pill" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <div class="nav-user-avatar-circle" style="width: 24px; height: 24px; font-size: 0.68rem;">${initials}</div>
+            <span>${userName}</span>
+          </a>
+          <button type="button" class="btn btn-primary btn-pill btn-global-logout">Keluar</button>
+        `;
+      }
+    } catch (e) {
+      console.error('Failed to parse auth user from localStorage', e);
+    }
+  }
+
+  syncNavbarAuthState();
+
+  // Global Logout Handler
+  document.addEventListener('click', (e) => {
+    const logoutBtn = e.target.closest('.btn-global-logout, #btn-user-logout, #btn-logout-all');
+    if (logoutBtn) {
+      e.preventDefault();
+      localStorage.removeItem('chef_auth_user');
+      showToast('Anda telah keluar dari akun.');
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 600);
+    }
+  });
+
+  // 14. USER MEMBER DASHBOARD INTERACTIONS
+  
+  // Mobile Sidebar Drawer Toggle
+  const userMobileToggle = document.getElementById('user-mobile-toggle');
+  const userSidebar = document.getElementById('user-sidebar');
+  if (userMobileToggle && userSidebar) {
+    userMobileToggle.addEventListener('click', () => {
+      userSidebar.classList.toggle('mobile-open');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!userSidebar.contains(e.target) && !userMobileToggle.contains(e.target)) {
+        userSidebar.classList.remove('mobile-open');
+      }
+    });
+  }
+
+  // Copy Referral Link Buttons
+  const copyRefBtns = document.querySelectorAll('.btn-copy-ref');
+  copyRefBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const link = btn.getAttribute('data-link') || 'https://chefkangsu.com?ref=KANGSU-XL8MNQ';
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(link).then(() => {
+          showToast('Link referral berhasil disalin ke clipboard!');
+        }).catch(() => {
+          showToast('Link: ' + link);
+        });
+      } else {
+        showToast('Link referral berhasil disalin!');
+      }
+    });
+  });
+
+  // Affiliate Tab Buttons
+  const affTabBtns = document.querySelectorAll('.aff-tab-btn');
+  affTabBtns.forEach(tab => {
+    tab.addEventListener('click', () => {
+      affTabBtns.forEach(b => b.classList.remove('active'));
+      tab.classList.add('active');
+      showToast(`Filter: ${tab.textContent.trim()} dipilih.`);
+    });
+  });
+
+  // Profile Form Submissions
+  const profileDataForm = document.getElementById('form-profile-data');
+  if (profileDataForm) {
+    profileDataForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      showToast('Perubahan data diri berhasil disimpan!');
+    });
+  }
+
+  const profileBankForm = document.getElementById('form-profile-bank');
+  if (profileBankForm) {
+    profileBankForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      showToast('Informasi rekening bank berhasil disimpan!');
+    });
+  }
+
+  const changePassBtn = document.getElementById('btn-change-password');
+  if (changePassBtn) {
+    changePassBtn.addEventListener('click', () => {
+      showToast('Tautan ubah password telah dikirim ke email/WhatsApp Anda.');
+    });
+  }
+
+  // Payout Submit Simulation
+  const submitPayoutBtn = document.getElementById('btn-submit-payout');
+  if (submitPayoutBtn) {
+    submitPayoutBtn.addEventListener('click', () => {
+      showToast('Saldo komisi belum mencapai batas minimum pencairan Rp 100.000.');
+    });
+  }
+
+  // 15. SMOOTH PAGE TRANSITION NAVIGATION
+  const pageLinks = document.querySelectorAll('a[href]');
+  pageLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (
+      href &&
+      !href.startsWith('#') &&
+      !href.startsWith('mailto:') &&
+      !href.startsWith('tel:') &&
+      !href.startsWith('https://wa.me') &&
+      !href.startsWith('http') &&
+      !link.getAttribute('target')
+    ) {
+      link.addEventListener('click', (e) => {
+        const targetUrl = link.href;
+        const currentUrl = window.location.href.split('#')[0];
+        const destinationBase = targetUrl.split('#')[0];
+
+        if (destinationBase !== currentUrl) {
+          e.preventDefault();
+          document.body.classList.add('page-fade-out');
+          setTimeout(() => {
+            window.location.href = targetUrl;
+          }, 180);
+        }
+      });
+    }
+  });
+
+  window.addEventListener('pageshow', (e) => {
+    if (e.persisted) {
+      document.body.classList.remove('page-fade-out');
+    }
+  });
 });
+
