@@ -32,9 +32,14 @@
             <span class="brand-subtitle">Halal Cooking Class</span>
           </div>
         </a>
-        <button class="user-bell-btn" aria-label="Notifikasi">
-          <i class="fa-regular fa-bell"></i>
-        </button>
+        <div class="user-sidebar-top-actions">
+          <button class="user-bell-btn" aria-label="Notifikasi">
+            <i class="fa-regular fa-bell"></i>
+          </button>
+          <button class="user-sidebar-close-btn" id="user-sidebar-close" aria-label="Tutup Menu">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
       </div>
 
       <!-- Mini Profile Badge -->
@@ -103,6 +108,9 @@
       </div>
 
     </aside>
+    
+    <!-- Mobile Sidebar Backdrop Overlay -->
+    <div class="user-sidebar-overlay" id="user-sidebar-overlay"></div>
 
     <!-- Mobile Header Bar -->
     <header class="user-mobile-topbar">

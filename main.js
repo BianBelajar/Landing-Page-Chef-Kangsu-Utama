@@ -856,18 +856,62 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 14. USER MEMBER DASHBOARD INTERACTIONS
   
-  // Mobile Sidebar Drawer Toggle
+  // Mobile Sidebar Drawer Toggle & Overlay
   const userMobileToggle = document.getElementById('user-mobile-toggle');
   const userSidebar = document.getElementById('user-sidebar');
+  const userSidebarClose = document.getElementById('user-sidebar-close');
+  const userSidebarOverlay = document.getElementById('user-sidebar-overlay');
+
+  function openUserSidebar() {
+    if (userSidebar) userSidebar.classList.add('mobile-open');
+    if (userSidebarOverlay) userSidebarOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeUserSidebar() {
+    if (userSidebar) userSidebar.classList.remove('mobile-open');
+    if (userSidebarOverlay) userSidebarOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
   if (userMobileToggle && userSidebar) {
-    userMobileToggle.addEventListener('click', () => {
-      userSidebar.classList.toggle('mobile-open');
+    userMobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (userSidebar.classList.contains('mobile-open')) {
+        closeUserSidebar();
+      } else {
+        openUserSidebar();
+      }
     });
 
-    document.addEventListener('click', (e) => {
-      if (!userSidebar.contains(e.target) && !userMobileToggle.contains(e.target)) {
-        userSidebar.classList.remove('mobile-open');
+    if (userSidebarClose) {
+      userSidebarClose.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeUserSidebar();
+      });
+    }
+
+    if (userSidebarOverlay) {
+      userSidebarOverlay.addEventListener('click', () => {
+        closeUserSidebar();
+      });
+    }
+
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && userSidebar.classList.contains('mobile-open')) {
+        closeUserSidebar();
       }
+    });
+
+    // Close on navigation link click in mobile view
+    const userDrawerLinks = userSidebar.querySelectorAll('.user-nav-link, .user-bottom-link, .user-mini-profile');
+    userDrawerLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          closeUserSidebar();
+        }
+      });
     });
   }
 

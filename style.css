@@ -5514,9 +5514,31 @@ html {
   transition: all 0.2s ease;
 }
 
-.user-bell-btn:hover {
-  color: var(--color-coral);
-  border-color: var(--color-coral);
+.user-sidebar-top-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.user-sidebar-close-btn {
+  display: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid #EAE0D4;
+  background: #FFFFFF;
+  color: #64748B;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+}
+
+.user-sidebar-close-btn:hover {
+  color: #DC2626;
+  border-color: #DC2626;
+  background: #FEF2F2;
 }
 
 /* Mini Profile Badge in Sidebar */
@@ -7100,22 +7122,62 @@ html {
 /* Mobile Topbar */
 .user-mobile-topbar {
   display: none;
-  background: #FFFFFF;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid #EDE4D8;
-  padding: 12px 20px;
+  padding: 0 16px;
+  height: 56px;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 101;
+  left: 0;
+  right: 0;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  z-index: 1000;
+  box-sizing: border-box;
 }
 
 .user-mobile-hamburger {
   background: transparent;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: var(--color-dark-navy);
   cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.user-mobile-hamburger:active {
+  background-color: #F5EFEB;
+}
+
+/* Backdrop Overlay untuk Drawer Menu Mobile */
+.user-sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(14, 31, 53, 0.55);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 9998;
+}
+
+.user-sidebar-overlay.active {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* ==================== NAVBAR AUTH STATE WIDGET ==================== */
@@ -7264,22 +7326,34 @@ html {
     display: flex;
   }
 
+  .user-sidebar-close-btn {
+    display: flex;
+  }
+
   .user-sidebar {
     position: fixed;
     top: 0;
-    left: -280px;
-    width: 270px;
+    left: 0;
+    width: 280px;
+    max-width: 84vw;
     height: 100vh;
-    transition: left 0.3s ease;
+    height: 100dvh;
+    background: #FFFDF9;
+    transform: translateX(-105%);
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
     z-index: 9999;
+    box-shadow: 8px 0 32px rgba(0, 0, 0, 0.18);
+    overflow-y: auto;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
   }
 
   .user-sidebar.mobile-open {
-    left: 0;
+    transform: translateX(0);
   }
 
   .user-main-content {
-    padding: 24px 16px 80px;
+    padding: 76px 16px 80px;
   }
 
   .user-stats-grid {
